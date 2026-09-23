@@ -1,275 +1,1302 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Academic website of Dr. Divyanshi Mangla, Assistant Professor of Chemistry and researcher in sustainable materials, biopolymers, nanocomposites and wastewater remediation." />
-  <meta name="theme-color" content="#153449" />
-  <title>Dr. Divyanshi Mangla | Chemistry Researcher & Assistant Professor</title>
+  <meta name="description" content="Academic portfolio and research website of Dr. Divyanshi Mangla, Assistant Professor of Chemistry at K.R. Mangalam University. Researcher in sustainable biopolymers, magnetic nanocomposites, and wastewater remediation." />
+  <meta name="keywords" content="Dr. Divyanshi Mangla, Chemistry Professor, K.R. Mangalam University, Jamia Millia Islamia, Biopolymers, Nanocomposites, Wastewater Remediation, Antibiotic Removal, CSIR NET JRF AIR 22, Green Chemistry, Academic Portfolio" />
+  <meta name="author" content="Dr. Divyanshi Mangla" />
+  <meta name="theme-color" content="#0a3d3c" />
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Divyanshi Mangla | Chemistry Researcher & Assistant Professor" />
+  <meta property="og:description" content="Assistant Professor of Chemistry at K.R. Mangalam University. Ph.D. Jamia Millia Islamia, CSIR-UGC NET-JRF AIR 22. Specialist in biopolymers, magnetic nanocomposites & water purification." />
+  <meta property="og:image" content="assets/profile.jpg" />
+
+  <title>Dr. Divyanshi Mangla | Academic Portfolio & Research Lab</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema.org Structured Data for Academic SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Divyanshi Mangla",
+    "jobTitle": "Assistant Professor of Chemistry",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "K.R. Mangalam University",
+      "address": "Sohna Road, Gurugram, Haryana, India"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Jamia Millia Islamia",
+        "address": "New Delhi, India"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "J.C. Bose University of Science and Technology, YMCA",
+        "address": "Faridabad, India"
+      }
+    ],
+    "email": "mailto:divyanshimangla96@gmail.com",
+    "image": "assets/profile.jpg",
+    "sameAs": [
+      "https://scholar.google.co.in/citations?user=LSswRc8AAAAJ&hl=en",
+      "https://orcid.org/0000-0003-4237-7597",
+      "https://vidwan.inflibnet.ac.in/profile/570826",
+      "https://www.linkedin.com/in/divyanshi-mangla-b02940318"
+    ],
+    "knowsAbout": [
+      "Biopolymers",
+      "Magnetic Nanocomposites",
+      "Wastewater Remediation",
+      "Antibiotic Adsorption",
+      "Green Chemistry",
+      "Environmental Materials"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Ambient background gradients -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+    <div class="blob-3"></div>
+  </div>
 
-  <header class="site-header" id="top">
-    <div class="nav-wrap container">
-      <a class="brand" href="#home" aria-label="Dr. Divyanshi Mangla home">
-        <span class="brand-mark">DM</span>
-        <span class="brand-text">Dr. Divyanshi Mangla</span>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="top-header">
+    <div class="container nav-container">
+      <a class="brand-link" href="#home" aria-label="Dr. Divyanshi Mangla Home">
+        <div class="brand-monogram">DM</div>
+        <div class="brand-title">
+          <span class="brand-name">Dr. Divyanshi Mangla</span>
+          <span class="brand-role">Assistant Professor of Chemistry</span>
+        </div>
       </a>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
+
+      <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#research">Research</a>
+        <a class="nav-link" href="#patent">Patent</a>
+        <a class="nav-link" href="#publications">Publications</a>
+        <a class="nav-link" href="#teaching">Teaching</a>
+        <a class="nav-link" href="#achievements">Achievements</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary btn-sm" href="assets/Dr_Divyanshi_Mangla_CV.docx" download title="Download Curriculum Vitae">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>CV</span>
+        </a>
+
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <svg class="theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="home">
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">CHEMISTRY • SUSTAINABLE MATERIALS • WATER REMEDIATION</p>
-          <h1>Dr. Divyanshi Mangla</h1>
-          <p class="hero-role">Assistant Professor of Chemistry & Environmental Materials Researcher</p>
-          <p class="hero-lead">I work at the interface of <strong>biopolymers, nanocomposites, bio-adsorbents and wastewater remediation</strong>, with a particular focus on sustainable materials for removing antibiotics and other contaminants from water.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#research">Explore my research</a>
-            <a class="btn secondary" href="assets/Dr_Divyanshi_Mangla_CV.docx" download>Download CV</a>
+        <div class="hero-content">
+          <div class="hero-pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>CSIR-UGC NET-JRF AIR 22 • Ph.D. Jamia Millia Islamia</span>
           </div>
-          <div class="profile-links" aria-label="Academic profiles">
-            <a href="https://scholar.google.co.in/citations?user=LSswRc8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="https://orcid.org/0000-0003-4237-7597" target="_blank" rel="noopener">ORCID</a>
-            <a href="https://vidwan.inflibnet.ac.in/profile/570826" target="_blank" rel="noopener">Vidwan</a>
-            <a href="https://www.linkedin.com/in/divyanshi-mangla-b02940318" target="_blank" rel="noopener">LinkedIn</a>
+
+          <h1 class="hero-title">
+            <span class="name-highlight">Dr. Divyanshi Mangla</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            <span>Assistant Professor of Chemistry & Materials Researcher</span>
+          </div>
+
+          <p class="hero-bio">
+            Pioneering eco-friendly solutions at the nexus of <strong>biopolymers, magnetic nanocomposites, bio-adsorbents, and wastewater remediation</strong>. Dedicated to engineering next-generation functional materials for the targeted removal of antibiotics and toxic pollutants from water systems.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#research">
+              <span>Explore Research</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a class="btn btn-secondary" href="assets/Dr_Divyanshi_Mangla_CV.docx" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download CV</span>
+            </a>
+            <a class="btn btn-secondary" href="#contact">
+              <span>Collaborate</span>
+            </a>
+          </div>
+
+          <!-- Academic Profile Links with SVG icons -->
+          <div class="profile-pills" aria-label="Scholarly Profiles">
+            <a class="profile-pill" href="https://scholar.google.co.in/citations?user=LSswRc8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar Profile">
+              <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              <span>Google Scholar</span>
+            </a>
+            <a class="profile-pill" href="https://orcid.org/0000-0003-4237-7597" target="_blank" rel="noopener noreferrer" title="ORCID Record">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.306v7.428h2.244c2.512 0 3.816-1.55 3.816-3.716 0-2.316-1.441-3.712-3.803-3.712h-2.257z"/></svg>
+              <span>ORCID</span>
+            </a>
+            <a class="profile-pill" href="https://vidwan.inflibnet.ac.in/profile/570826" target="_blank" rel="noopener noreferrer" title="INFLIBNET Vidwan Profile">
+              <svg viewBox="0 0 24 24"><path d="M12 2L1 8l11 6 9-4.91V17h2V8L12 2zM3.45 13.06L12 17.73l8.55-4.67V16l-8.55 4.67L3.45 16v-2.94z"/></svg>
+              <span>Vidwan</span>
+            </a>
+            <a class="profile-pill" href="https://www.linkedin.com/in/divyanshi-mangla-b02940318" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="profile-pill" href="mailto:divyanshimangla96@gmail.com" title="Direct Email">
+              <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.718 9.518-7.718v11.817h-19.036z"/></svg>
+              <span>Email</span>
+            </a>
           </div>
         </div>
-        <div class="hero-visual reveal">
-          <div class="portrait-card">
-            <img src="assets/profile.jpg" alt="Portrait of Dr. Divyanshi Mangla" />
-            <div class="portrait-caption">
-              <strong>Ph.D. Chemistry</strong>
-              <span>Jamia Millia Islamia, New Delhi</span>
+
+        <!-- Hero Portrait Visual Card -->
+        <div class="portrait-container">
+          <div class="portrait-glow-ring"></div>
+          <div class="portrait-frame">
+            <div class="portrait-img-wrapper">
+              <img class="portrait-img" src="assets/profile.jpg" alt="Dr. Divyanshi Mangla - Assistant Professor of Chemistry" />
+              <div class="portrait-status-badge">
+                <div class="status-left">
+                  <span class="status-institution">K.R. Mangalam University</span>
+                  <span class="status-dept">School of Basic & Applied Sciences</span>
+                </div>
+                <div class="status-pulse">
+                  <span class="pulse-dot"></span>
+                  <span>Active</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container stats" aria-label="Research highlights">
-        <article><strong>870+</strong><span>Citations</span></article>
-        <article><strong>9</strong><span>h-index</span></article>
-        <article><strong>10</strong><span>Journal Articles</span></article>
-        <article><strong>6</strong><span>Book Chapters</span></article>
-        <article><strong>1</strong><span>Patent</span></article>
-        <article><strong>AIR 22</strong><span>CSIR-UGC NET-JRF</span></article>
-      </div>
-    </section>
 
-    <section class="section" id="about">
-      <div class="container section-grid">
-        <div>
-          <p class="section-kicker">About</p>
-          <h2>Academic profile</h2>
-        </div>
-        <div class="prose">
-          <p>Dr. Divyanshi Mangla is an Assistant Professor of Chemistry at <strong>K.R. Mangalam University, Gurugram</strong>. Her research focuses on sustainable functional materials for environmental remediation, especially biopolymer-based adsorbents, magnetic nanocomposites and bio-derived materials for the removal of antibiotics and organic pollutants from water.</p>
-          <p>She earned her Ph.D. in Chemistry from <strong>Jamia Millia Islamia, New Delhi</strong>, with a doctoral thesis titled <em>“Bio-Polymer Based Designing of Integrated System for the Removal of Antibiotics From Wastewater.”</em> She qualified CSIR-UGC NET-JRF with <strong>All India Rank 22</strong>.</p>
-          <p>Her work spans adsorption science, polymer–nanomaterial interfaces, wastewater treatment, sustainable chemistry and environmental materials design.</p>
-        </div>
-      </div>
-
-      <div class="container timeline" aria-label="Academic timeline">
-        <article class="timeline-item">
-          <span class="timeline-year">2024–Present</span>
-          <h3>Assistant Professor (Chemistry)</h3>
-          <p>K.R. Mangalam University, Sohna, Gurugram</p>
-        </article>
-        <article class="timeline-item">
-          <span class="timeline-year">2024</span>
-          <h3>CSIR-UGC NET-JRF</h3>
-          <p>All India Rank 22</p>
-        </article>
-        <article class="timeline-item">
-          <span class="timeline-year">2023</span>
-          <h3>Ph.D. in Chemistry</h3>
-          <p>Jamia Millia Islamia, New Delhi</p>
-        </article>
-        <article class="timeline-item">
-          <span class="timeline-year">2023</span>
-          <h3>Guest Faculty</h3>
-          <p>J.C. Bose University of Science & Technology YMCA, Faridabad</p>
-        </article>
-        <article class="timeline-item">
-          <span class="timeline-year">2018</span>
-          <h3>M.Sc. Chemistry</h3>
-          <p>YMCA UST • GPA 8.75</p>
-        </article>
-        <article class="timeline-item">
-          <span class="timeline-year">2016</span>
-          <h3>B.Sc. (Hons.) Chemistry</h3>
-          <p>Jamia Millia Islamia • GPA 8.15</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section tinted" id="research">
+      <!-- Animated Research Metrics Strip -->
       <div class="container">
-        <p class="section-kicker">Research</p>
-        <h2>Research interests & themes</h2>
-        <p class="section-intro">My research connects materials chemistry with practical environmental challenges, particularly the design of efficient and reusable systems for water purification.</p>
-        <div class="cards research-cards">
-          <article class="card"><span class="card-icon">01</span><h3>Biopolymers</h3><p>Chitosan and other polymeric matrices for sustainable functional materials and pollutant capture.</p></article>
-          <article class="card"><span class="card-icon">02</span><h3>Nanocomposites</h3><p>Magnetic and metal-oxide nanocomposites engineered for separation, adsorption and environmental applications.</p></article>
-          <article class="card"><span class="card-icon">03</span><h3>Bio-adsorbents</h3><p>Low-impact, biomass-derived and hybrid adsorbents for water and wastewater treatment.</p></article>
-          <article class="card"><span class="card-icon">04</span><h3>Wastewater Remediation</h3><p>Adsorption, treatment optimization, regeneration and real-water applications for emerging contaminants.</p></article>
-          <article class="card"><span class="card-icon">05</span><h3>Antibiotic Adsorption</h3><p>Removal of antibiotics such as amoxicillin, tetracycline and trimethoprim from aqueous systems.</p></article>
-          <article class="card"><span class="card-icon">06</span><h3>Sustainable Materials</h3><p>Designing reusable materials with attention to practical performance, circularity and environmental responsibility.</p></article>
-        </div>
-
-        <div class="patent-panel">
-          <div>
-            <p class="section-kicker">Patent & Innovation</p>
-            <h3>A system for the production of a polymer composite based on Chitosan, Matcha green tea and nickel-ferrite nanoparticles</h3>
-            <p>Published in the Federal Republic of Germany on 22 April 2025 • Certificate No. <strong>G25189DE</strong></p>
+        <div class="stats-strip" id="stats-counter-strip">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-num-wrapper">
+                <span class="stat-number" data-target="870">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Citations</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-wrapper">
+                <span class="stat-number" data-target="9">0</span>
+              </div>
+              <span class="stat-label">h-Index</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-wrapper">
+                <span class="stat-number" data-target="9">0</span>
+              </div>
+              <span class="stat-label">i10-Index</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-wrapper">
+                <span class="stat-number" data-target="10">0</span>
+              </div>
+              <span class="stat-label">Journal Articles</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-wrapper">
+                <span class="stat-number" data-target="6">0</span>
+              </div>
+              <span class="stat-label">Book Chapters</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-wrapper">
+                <span class="stat-number" data-target="22">0</span>
+                <span class="stat-suffix"> AIR</span>
+              </div>
+              <span class="stat-label">CSIR-UGC JRF</span>
+            </div>
           </div>
-          <span class="patent-badge">PATENT</span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="publications">
+    <!-- About & Academic Journey Section -->
+    <section class="section section-tinted" id="about">
       <div class="container">
-        <div class="section-heading-row">
-          <div>
-            <p class="section-kicker">Research Output</p>
-            <h2>Selected publications</h2>
+        <div class="section-header">
+          <span class="section-kicker">Scholarly Background</span>
+          <h2 class="section-title">Academic Profile & Journey</h2>
+          <p class="section-desc">Transforming environmental challenges into sustainable materials solutions through rigorous scientific inquiry and interdisciplinary research.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-prose">
+            <p>
+              <strong>Dr. Divyanshi Mangla</strong> is an Assistant Professor of Chemistry at the School of Basic and Applied Sciences, <strong>K.R. Mangalam University, Gurugram</strong>. Her research is focused on developing green and sustainable functional materials, biopolymer-based adsorbents, and magnetic nanocomposites for the mitigation of persistent wastewater contaminants.
+            </p>
+            <p>
+              She completed her <strong>Ph.D. in Chemistry</strong> from the prestigious <strong>Jamia Millia Islamia, New Delhi</strong> (Nov 2023). Her doctoral investigations centered on fabricating integrated biopolymer frameworks for removing recalcitrant pharmaceutical residues, especially broad-spectrum antibiotics such as amoxicillin, tetracycline, and trimethoprim, from industrial and municipal effluents.
+            </p>
+            <p>
+              A distinguished scholar, she qualified the highly competitive <strong>CSIR-UGC NET-JRF</strong> with an outstanding <strong>All India Rank 22</strong> (June 2024), alongside previously qualifying CSIR-UGC NET-LS (June 2019). Her work bridges fundamental adsorption thermodynamics, kinetics, fixed-bed column dynamics, and eco-sustainable nanomaterials synthesis.
+            </p>
+
+            <div class="about-thesis-card">
+              <span class="thesis-badge">Ph.D. Doctoral Dissertation</span>
+              <h3 class="thesis-title">“Bio-Polymer Based Designing of Integrated System for the Removal of Antibiotics From Wastewater”</h3>
+              <p class="thesis-meta">Department of Chemistry, Jamia Millia Islamia, New Delhi • Awarded November 2023</p>
+            </div>
           </div>
-          <a class="text-link" href="https://scholar.google.co.in/citations?user=LSswRc8AAAAJ&hl=en" target="_blank" rel="noopener">View Google Scholar ↗</a>
+
+          <div class="timeline-card">
+            <h3 style="margin-bottom: 24px; font-size: 1.25rem;">Milestones & Appointments</h3>
+            <div class="timeline-list">
+              <div class="timeline-entry highlight">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">2024 – PRESENT</div>
+                <h4 class="timeline-title">Assistant Professor of Chemistry</h4>
+                <p class="timeline-sub">School of Basic & Applied Sciences, K.R. Mangalam University, Sohna, Gurugram</p>
+              </div>
+
+              <div class="timeline-entry highlight">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">JUNE 2024</div>
+                <h4 class="timeline-title">CSIR-UGC NET-JRF (AIR 22)</h4>
+                <p class="timeline-sub">Council of Scientific and Industrial Research • All India Rank 22</p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">NOV 2023</div>
+                <h4 class="timeline-title">Doctor of Philosophy (Ph.D.) in Chemistry</h4>
+                <p class="timeline-sub">Jamia Millia Islamia, New Delhi</p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">JAN 2023 – MAR 2023</div>
+                <h4 class="timeline-title">Guest Faculty (Chemistry)</h4>
+                <p class="timeline-sub">J.C. Bose University of Science & Technology YMCA, Faridabad</p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">JUNE 2019</div>
+                <h4 class="timeline-title">CSIR-UGC NET-LS Qualified</h4>
+                <p class="timeline-sub">Lectureship Eligibility in Chemical Sciences</p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">2016 – 2018</div>
+                <h4 class="timeline-title">Master of Science (M.Sc.) Chemistry</h4>
+                <p class="timeline-sub">J.C. Bose University of Science & Technology YMCA • GPA: 8.75</p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker"></div>
+                <div class="timeline-year">2013 – 2016</div>
+                <h4 class="timeline-title">Bachelor of Science (B.Sc. Hons) Chemistry</h4>
+                <p class="timeline-sub">Jamia Millia Islamia, New Delhi • GPA: 8.15</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="pub-list">
-          <article class="publication featured">
-            <span class="pub-year">2022</span>
-            <div><h3>Critical review on adsorptive removal of antibiotics: present situation, challenges and future perspective</h3><p><strong>Journal of Hazardous Materials</strong>, 425, 127946.</p><a href="https://doi.org/10.1016/J.JHAZMAT.2021.127946" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication featured">
-            <span class="pub-year">2022</span>
-            <div><h3>Synthesis of ecological chitosan/PVP magnetic composite: remediation of amoxicillin trihydrate</h3><p><strong>Reactive and Functional Polymers</strong>, 175, 105261.</p><a href="https://doi.org/10.1016/j.reactfunctpolym.2022.105261" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication featured">
-            <span class="pub-year">2022</span>
-            <div><h3>Recent advances in magnetic composites as adsorbents for wastewater remediation</h3><p><strong>Journal of Environmental Management</strong>, 306, 114483.</p><a href="https://doi.org/10.1016/J.JENVMAN.2022.114483" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication featured">
-            <span class="pub-year">2023</span>
-            <div><h3>Synergistic effect of PVP/chitosan/ZnFe₂O₄-polymer composite against amoxicillin</h3><p><strong>Polymer Bulletin</strong>.</p><a href="https://doi.org/10.1007/S00289-023-04896-1" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication more-pub hidden">
-            <span class="pub-year">2022</span>
-            <div><h3>Facile synthesis, physico-chemical studies of Ocimum sanctum magnetic nanocomposite and its adsorptive application against methylene blue</h3><p><strong>Journal of Molecular Liquids</strong>, 362, 119752.</p><a href="https://doi.org/10.1016/j.molliq.2022.119752" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication more-pub hidden">
-            <span class="pub-year">2023</span>
-            <div><h3>Cobalt ferrite incorporated Ocimum sanctum nanocomposite matrix as an interface for adsorption of organic dyes</h3><p><strong>ChemistrySelect</strong>, 8, e202203709.</p><a href="https://doi.org/10.1002/SLCT.202203709" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication more-pub hidden">
-            <span class="pub-year">2023</span>
-            <div><h3>Copper(II)-anchored carboxymethyl cellulose as a magnetically recyclable nanocatalyst for effective reduction of organic pollutants</h3><p><strong>Catalysis Communications</strong>, 181, 106724.</p><a href="https://doi.org/10.1016/J.CATCOM.2023.106724" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication more-pub hidden">
-            <span class="pub-year">2023</span>
-            <div><h3>Base activated hydrothermal carbonisation of coconut husk and wheat straw for adsorption of tetracycline and trimethoprim</h3><p><strong>Biomass Conversion and Biorefinery</strong>.</p><a href="https://doi.org/10.1007/s13399-023-05064-1" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication more-pub hidden">
-            <span class="pub-year">2026</span>
-            <div><h3>Synthesis characterization and biological applications of semicarbazide and thiosemicarbazide derived Schiff base complexes</h3><p><strong>Discover Materials</strong>.</p><a href="https://doi.org/10.1007/s43939-026-00771-8" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-          <article class="publication more-pub hidden">
-            <span class="pub-year">2026</span>
-            <div><h3>Simulation-Based Investigation of Tunable Luminescence and Optical Behavior of Polycarbazole-Based Metal Oxide Nanocomposites SnO₂ and TiO₂</h3><p><strong>Malaysian Journal of Chemistry</strong>.</p><a href="https://doi.org/10.55373/mjchem.v28i3.274" target="_blank" rel="noopener">DOI ↗</a></div>
-          </article>
-        </div>
-        <button class="btn tertiary" id="show-more-pubs" type="button">Show all publications</button>
       </div>
     </section>
 
-    <section class="section tinted" id="books">
+    <!-- Research Thrusts Section -->
+    <section class="section" id="research">
       <div class="container">
-        <p class="section-kicker">Books</p>
-        <h2>Selected book chapters</h2>
-        <div class="cards book-cards">
-          <article class="card"><span class="pub-year">2019</span><h3>Effective Removal of ‘Non-Biodegradable’ Pollutants from Contaminated Water</h3><p>Nova Science Publishers</p></article>
-          <article class="card"><span class="pub-year">2021</span><h3>Chitosan-Based Bionanocomposites in Drug Delivery</h3><p>Woodhead Publishing</p></article>
-          <article class="card"><span class="pub-year">2022</span><h3>Enabling Polysaccharide Applications for Wastewater Treatment Using Carbon Nanotubes</h3><p>Elsevier</p></article>
-          <article class="card"><span class="pub-year">2024</span><h3>Biosensors: A Promising Approach for Healthcare Application</h3><p>Woodhead Publishing</p></article>
-          <article class="card"><span class="pub-year">2024</span><h3>Bioplastics in Medical Devices</h3><p>Wiley</p></article>
-          <article class="card"><span class="pub-year">2019</span><h3>Enzymatic Modification of Biopolymeric Surfaces for CO₂ Sequestration</h3><p>Nova Science Publishers</p></article>
+        <div class="section-header center">
+          <span class="section-kicker">Research Program</span>
+          <h2 class="section-title">Core Research Thrusts</h2>
+          <p class="section-desc">Pioneering sustainable chemistry methods to create functional materials that solve urgent water contamination and environmental remediation challenges.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card">
+            <div class="research-icon-wrapper">🌱</div>
+            <h3>Biopolymers & Chitosan</h3>
+            <p>Developing novel macromolecular matrices using natural polymers including chitosan and polyvinylpyrrolidone (PVP) for targeted capture of hazardous aqueous contaminants.</p>
+            <div class="research-tags">
+              <span class="research-tag">Chitosan</span>
+              <span class="research-tag">PVP</span>
+              <span class="research-tag">CMC</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-icon-wrapper">🧲</div>
+            <h3>Magnetic Nanocomposites</h3>
+            <p>Engineering superparamagnetic ferrite nanoparticles (NiFe₂O₄, ZnFe₂O₄, CoFe₂O₄) incorporated inside polymeric scaffolds for ultra-fast magnetic separation and reuse.</p>
+            <div class="research-tags">
+              <span class="research-tag">Magnetic Separation</span>
+              <span class="research-tag">Ferrites</span>
+              <span class="research-tag">Regeneration</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-icon-wrapper">🧪</div>
+            <h3>Bio-adsorbents & Carbonization</h3>
+            <p>Harnessing agricultural residues through base-activated hydrothermal carbonisation of coconut husk and wheat straw to create high-surface-area porous carbon adsorbents.</p>
+            <div class="research-tags">
+              <span class="research-tag">Hydrothermal Carbonisation</span>
+              <span class="research-tag">Agri-waste</span>
+              <span class="research-tag">Biochar</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-icon-wrapper">💧</div>
+            <h3>Wastewater Remediation</h3>
+            <p>Conducting in-depth equilibrium isotherm modeling (Langmuir, Freundlich), kinetic modeling, thermodynamic analyses, and fixed-bed continuous flow column dynamics for water purification.</p>
+            <div class="research-tags">
+              <span class="research-tag">Isotherm Modeling</span>
+              <span class="research-tag">Continuous Column</span>
+              <span class="research-tag">Water Reuse</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-icon-wrapper">💊</div>
+            <h3>Antibiotic Capture</h3>
+            <p>Mitigating the global threat of antimicrobial resistance by developing specialized sorbents that eliminate trace antibiotics (Amoxicillin, Tetracycline, Trimethoprim) from aquatic ecosystems.</p>
+            <div class="research-tags">
+              <span class="research-tag">Amoxicillin</span>
+              <span class="research-tag">Tetracycline</span>
+              <span class="research-tag">Trimethoprim</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-icon-wrapper">♻️</div>
+            <h3>Green & Circular Chemistry</h3>
+            <p>Green synthesis protocols integrating natural botanical extracts (Matcha green tea, Ocimum sanctum) for sustainable nanocomposite manufacturing with minimal ecological footprint.</p>
+            <div class="research-tags">
+              <span class="research-tag">Matcha Green Tea</span>
+              <span class="research-tag">Tulsi / Ocimum</span>
+              <span class="research-tag">Circular Design</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Patent Showcase Banner -->
+        <div class="patent-banner" id="patent">
+          <div>
+            <div class="patent-badge-top">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              <span>German Patent Published</span>
+            </div>
+            <h3 class="patent-title">A system for the production of a polymer composite based on Chitosan, Matcha green tea and nickel-ferrite nanoparticles</h3>
+            <p class="patent-desc">
+              An innovative sustainable processing technology synthesizing a multi-functional hybrid nanocomposite integrating biopolymer chitosan, polyphenolic botanical extract of Matcha green tea, and nickel-ferrite nanoparticles for advanced environmental remediation.
+            </p>
+            <div class="patent-meta">
+              <span>Jurisdiction: <strong>Federal Republic of Germany</strong></span>
+              <span>•</span>
+              <span>Publication Date: <strong>22 April 2025</strong></span>
+              <span>•</span>
+              <span>Certificate No: <strong>G25189DE</strong></span>
+            </div>
+          </div>
+          <div class="patent-seal">
+            <div class="seal-icon">🏛️</div>
+            <div class="seal-country">GERMANY</div>
+            <div class="seal-number">G25189DE</div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Publications Section -->
+    <section class="section section-tinted" id="publications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Scholarly Output</span>
+          <h2 class="section-title">Publications & Research Works</h2>
+          <p class="section-desc">Peer-reviewed journal articles, high-impact reviews, and scholarly book chapters published in prestigious international venues.</p>
+        </div>
+
+        <!-- Controls: Filter Pills & Search Input -->
+        <div class="pub-controls">
+          <div class="pub-filter-tabs" role="tablist">
+            <button class="filter-btn active" data-filter="all">All Works (17)</button>
+            <button class="filter-btn" data-filter="journal">Journal Articles (10)</button>
+            <button class="filter-btn" data-filter="chapter">Book Chapters (6)</button>
+            <button class="filter-btn" data-filter="patent">Patent (1)</button>
+          </div>
+
+          <div class="pub-search-box">
+            <svg class="pub-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input class="pub-search-input" id="pub-search" type="search" placeholder="Search by topic, journal, or year..." aria-label="Search publications" />
+          </div>
+        </div>
+
+        <!-- Publications List Container -->
+        <div class="publications-list" id="pub-container">
+
+          <!-- 1. J. Hazardous Materials -->
+          <article class="pub-card" data-category="journal" data-year="2022" data-keywords="antibiotics review hazardous materials amoxicillin remediation elsevier">
+            <div class="pub-year-badge">2022</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Review Article • Q1 SCIE</span>
+              <h3 class="pub-title">Critical review on adsorptive removal of antibiotics: present situation, challenges and future perspective</h3>
+              <p class="pub-authors"><span class="author-me">Divyanshi Mangla</span>, Annu*, Atul Sharma, Saiqa Ikram*</p>
+              <div class="pub-venue">
+                <span><strong>Journal of Hazardous Materials</strong>, Elsevier, 425, 127946.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q1 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 11.3</span>
+                <span class="metric-pill scopus">Scopus / SCIE</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/J.JHAZMAT.2021.127946" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, D., Annu, Sharma, A., & Ikram, S. (2022). Critical review on adsorptive removal of antibiotics: present situation, challenges and future perspective. Journal of Hazardous Materials, 425, 127946.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{mangla2022critical,
+  title={Critical review on adsorptive removal of antibiotics: present situation, challenges and future perspective},
+  author={Mangla, Divyanshi and Annu and Sharma, Atul and Ikram, Saiqa},
+  journal={Journal of Hazardous Materials},
+  volume={425},
+  pages={127946},
+  year={2022},
+  publisher={Elsevier},
+  doi={10.1016/j.jhazmat.2021.127946}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 2. Reactive and Functional Polymers -->
+          <article class="pub-card" data-category="journal" data-year="2022" data-keywords="chitosan pvp magnetic composite amoxicillin trihydrate isotherm modeling elsevier">
+            <div class="pub-year-badge">2022</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q1 SCIE</span>
+              <h3 class="pub-title">Synthesis of ecological chitosan/PVP magnetic composite: Remediation of amoxicillin trihydrate from its aqueous solution, isotherm modelling, thermodynamic, and kinetic studies</h3>
+              <p class="pub-authors"><span class="author-me">Divyanshi Mangla</span>, Atul Sharma, Saiqa Ikram*</p>
+              <div class="pub-venue">
+                <span><strong>Reactive and Functional Polymers</strong>, Elsevier, 175, 105261.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q1 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 5.1</span>
+                <span class="metric-pill scopus">Scopus / SCIE</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/j.reactfunctpolym.2022.105261" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, D., Sharma, A., & Ikram, S. (2022). Synthesis of ecological chitosan/PVP magnetic composite: Remediation of amoxicillin trihydrate from its aqueous solution, isotherm modelling, thermodynamic, and kinetic studies. Reactive and Functional Polymers, 175, 105261.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{mangla2022synthesis,
+  title={Synthesis of ecological chitosan/PVP magnetic composite: Remediation of amoxicillin trihydrate from its aqueous solution, isotherm modelling, thermodynamic, and kinetic studies},
+  author={Mangla, Divyanshi and Sharma, Atul and Ikram, Saiqa},
+  journal={Reactive and Functional Polymers},
+  volume={175},
+  pages={105261},
+  year={2022},
+  publisher={Elsevier},
+  doi={10.1016/j.reactfunctpolym.2022.105261}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 3. J. Environmental Management -->
+          <article class="pub-card" data-category="journal" data-year="2022" data-keywords="magnetic composites wastewater remediation environmental management elsevier">
+            <div class="pub-year-badge">2022</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Review Article • Q1 SCIE</span>
+              <h3 class="pub-title">Recent advances in magnetic composites as adsorbents for wastewater remediation</h3>
+              <p class="pub-authors">Atul Sharma, <span class="author-me">Divyanshi Mangla</span>, Saif Ali Chaudhry*</p>
+              <div class="pub-venue">
+                <span><strong>Journal of Environmental Management</strong>, Elsevier, 306, 114483.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q1 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 8.4</span>
+                <span class="metric-pill scopus">Scopus / SCIE</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/J.JENVMAN.2022.114483" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Sharma, A., Mangla, D., & Chaudhry, S. A. (2022). Recent advances in magnetic composites as adsorbents for wastewater remediation. Journal of Environmental Management, 306, 114483.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{sharma2022recent,
+  title={Recent advances in magnetic composites as adsorbents for wastewater remediation},
+  author={Sharma, Atul and Mangla, Divyanshi and Chaudhry, Saif Ali},
+  journal={Journal of Environmental Management},
+  volume={306},
+  pages={114483},
+  year={2022},
+  publisher={Elsevier},
+  doi={10.1016/j.jenvman.2022.114483}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 4. Polymer Bulletin -->
+          <article class="pub-card" data-category="journal" data-year="2023" data-keywords="synergistic pvp chitosan znfe2o4 polymer composite amoxicillin batch fixed-bed springer">
+            <div class="pub-year-badge">2023</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q2 SCIE</span>
+              <h3 class="pub-title">Synergistic effect of PVP/chitosan/ZnFe₂O₄-polymer composite against amoxicillin: batch and fixed-bed adsorptive applications</h3>
+              <p class="pub-authors"><span class="author-me">Divyanshi Mangla</span>, Atul Sharma, Iftkhar Ahmad, Zeinholm M. El-Bahy, Saiqa Ikram*</p>
+              <div class="pub-venue">
+                <span><strong>Polymer Bulletin</strong>, Springer, (2023) 1–25.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q2 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 4.2</span>
+                <span class="metric-pill scopus">Scopus / SCIE</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1007/S00289-023-04896-1" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, D., Sharma, A., Ahmad, I., El-Bahy, Z. M., & Ikram, S. (2023). Synergistic effect of PVP/chitosan/ZnFe2O4-polymer composite against amoxicillin: batch and fixed-bed adsorptive applications. Polymer Bulletin, 1-25.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{mangla2023synergistic,
+  title={Synergistic effect of PVP/chitosan/ZnFe2O4-polymer composite against amoxicillin: batch and fixed-bed adsorptive applications},
+  author={Mangla, Divyanshi and Sharma, Atul and Ahmad, Iftkhar and El-Bahy, Zeinholm M and Ikram, Saiqa},
+  journal={Polymer Bulletin},
+  pages={1--25},
+  year={2023},
+  publisher={Springer},
+  doi={10.1007/s00289-023-04896-1}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 5. J. Molecular Liquids -->
+          <article class="pub-card" data-category="journal" data-year="2022" data-keywords="ocimum sanctum tulsi magnetic nanocomposite methylene blue elsevier">
+            <div class="pub-year-badge">2022</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q1 Scopus</span>
+              <h3 class="pub-title">Facile synthesis, physico-chemical studies of Ocimum Sanctum magnetic nanocomposite and its adsorptive application against Methylene blue</h3>
+              <p class="pub-authors">Atul Sharma, <span class="author-me">Divyanshi Mangla</span>, Arshi Choudhry, Md Sajid, Saif Ali Chaudhry*</p>
+              <div class="pub-venue">
+                <span><strong>Journal of Molecular Liquids</strong>, Elsevier, 362, 119752.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q1 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 5.2</span>
+                <span class="metric-pill scopus">Scopus</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/j.molliq.2022.119752" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Sharma, A., Mangla, D., Choudhry, A., Sajid, M., & Chaudhry, S. A. (2022). Facile synthesis, physico-chemical studies of Ocimum Sanctum magnetic nanocomposite and its adsorptive application against Methylene blue. Journal of Molecular Liquids, 362, 119752.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{sharma2022facile,
+  title={Facile synthesis, physico-chemical studies of Ocimum Sanctum magnetic nanocomposite and its adsorptive application against Methylene blue},
+  author={Sharma, Atul and Mangla, Divyanshi and Choudhry, Arshi and Sajid, Md and Chaudhry, Saif Ali},
+  journal={Journal of Molecular Liquids},
+  volume={362},
+  pages={119752},
+  year={2022},
+  publisher={Elsevier},
+  doi={10.1016/j.molliq.2022.119752}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 6. ChemistrySelect -->
+          <article class="pub-card" data-category="journal" data-year="2023" data-keywords="cobalt ferrite ocimum sanctum nanocomposite matrix adsorption organic dyes wiley">
+            <div class="pub-year-badge">2023</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q3 Scopus</span>
+              <h3 class="pub-title">Cobalt Ferrite Incorporated Ocimum sanctum Nanocomposite Matrix as an Interface for Adsorption of Organic Dyes: A Sustainable Alternative</h3>
+              <p class="pub-authors">Atul Sharma, Shoaib Rasheed, <span class="author-me">Divyanshi Mangla</span>, Arshi Choudhry, Sneha Shukla, Saif Ali Chaudhry*</p>
+              <div class="pub-venue">
+                <span><strong>ChemistrySelect</strong>, Wiley, 8, e202203709.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Impact Factor: 2.0</span>
+                <span class="metric-pill scopus">Scopus / Wiley</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1002/SLCT.202203709" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Sharma, A., Rasheed, S., Mangla, D., Choudhry, A., Shukla, S., & Chaudhry, S. A. (2023). Cobalt Ferrite Incorporated Ocimum sanctum Nanocomposite Matrix as an Interface for Adsorption of Organic Dyes: A Sustainable Alternative. ChemistrySelect, 8(8), e202203709.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{sharma2023cobalt,
+  title={Cobalt Ferrite Incorporated Ocimum sanctum Nanocomposite Matrix as an Interface for Adsorption of Organic Dyes: A Sustainable Alternative},
+  author={Sharma, Atul and Rasheed, Shoaib and Mangla, Divyanshi and Choudhry, Arshi and Shukla, Sneha and Chaudhry, Saif Ali},
+  journal={ChemistrySelect},
+  volume={8},
+  number={8},
+  pages={e202203709},
+  year={2023},
+  publisher={Wiley Online Library},
+  doi={10.1002/slct.202203709}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 7. Catalysis Communications -->
+          <article class="pub-card" data-category="journal" data-year="2023" data-keywords="copper carboxymethyl cellulose nanocatalyst reduction organic pollutants elsevier open access">
+            <div class="pub-year-badge">2023</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q1 Open Access</span>
+              <h3 class="pub-title">Unraveling the catalytic efficacy of copper(II)-anchored carboxymethyl cellulose as a magnetically recyclable nanocatalyst for effective reduction of organic pollutants</h3>
+              <p class="pub-authors">Iftkhar Ahmad, Arshiya Abbasi, <span class="author-me">Divyanshi Mangla</span>, Saiqa Ikram*</p>
+              <div class="pub-venue">
+                <span><strong>Catalysis Communications</strong>, Elsevier, 181, 106724.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q1 Journal</span>
+                <span class="metric-pill impact">SCIE / Web of Science</span>
+                <span class="metric-pill scopus">Open Access</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/J.CATCOM.2023.106724" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Ahmad, I., Abbasi, A., Mangla, D., & Ikram, S. (2023). Unraveling the catalytic efficacy of copper(II)-anchored carboxymethyl cellulose as a magnetically recyclable nanocatalyst for effective reduction of organic pollutants. Catalysis Communications, 181, 106724.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{ahmad2023unraveling,
+  title={Unraveling the catalytic efficacy of copper(II)-anchored carboxymethyl cellulose as a magnetically recyclable nanocatalyst for effective reduction of organic pollutants},
+  author={Ahmad, Iftkhar and Abbasi, Arshiya and Mangla, Divyanshi and Ikram, Saiqa},
+  journal={Catalysis Communications},
+  volume={181},
+  pages={106724},
+  year={2023},
+  publisher={Elsevier},
+  doi={10.1016/j.catcom.2023.106724}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 8. Biomass Conversion and Biorefinery -->
+          <article class="pub-card" data-category="journal" data-year="2023" data-keywords="hydrothermal carbonisation coconut husk wheat straw tetracycline trimethoprim springer">
+            <div class="pub-year-badge">2023</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q2 SCIE</span>
+              <h3 class="pub-title">Base activated hydrothermal carbonisation of Coconut husk and Wheat straw for the adsorption of Tetracycline and Trimethoprim: A Comparative approach</h3>
+              <p class="pub-authors"><span class="author-me">Divyanshi Mangla</span>, Saiqa Ikram*</p>
+              <div class="pub-venue">
+                <span><strong>Biomass Conversion and Biorefinery</strong>, Springer.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q2 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 4.1</span>
+                <span class="metric-pill scopus">Scopus / SCIE</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1007/s13399-023-05064-1" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, D., & Ikram, S. (2023). Base activated hydrothermal carbonisation of Coconut husk and Wheat straw for the adsorption of Tetracycline and Trimethoprim: A Comparative approach. Biomass Conversion and Biorefinery, 1-17.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{mangla2023base,
+  title={Base activated hydrothermal carbonisation of Coconut husk and Wheat straw for the adsorption of Tetracycline and Trimethoprim: A Comparative approach},
+  author={Mangla, Divyanshi and Ikram, Saiqa},
+  journal={Biomass Conversion and Biorefinery},
+  pages={1--17},
+  year={2023},
+  publisher={Springer},
+  doi={10.1007/s13399-023-05064-1}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 9. Discover Materials -->
+          <article class="pub-card" data-category="journal" data-year="2026" data-keywords="schiff base complexes semicarbazide thiosemicarbazide springer discover materials">
+            <div class="pub-year-badge">2026</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Q1 Scopus</span>
+              <h3 class="pub-title">Synthesis characterization and biological applications of semicarbazide and thiosemicarbazide derived Schiff base complexes</h3>
+              <p class="pub-authors">Vaishali Chugh, Chandra Mohan, Prem Lata Meena, <span class="author-me">Divyanshi Mangla</span>, Noushi Zaidi*</p>
+              <div class="pub-venue">
+                <span><strong>Discover Materials</strong>, Springer.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Q1 Journal</span>
+                <span class="metric-pill impact">Impact Factor: 5.8</span>
+                <span class="metric-pill scopus">Scopus</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1007/s43939-026-00771-8" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Chugh, V., Mohan, C., Meena, P. L., Mangla, D., & Zaidi, N. (2026). Synthesis characterization and biological applications of semicarbazide and thiosemicarbazide derived Schiff base complexes. Discover Materials.">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{chugh2026synthesis,
+  title={Synthesis characterization and biological applications of semicarbazide and thiosemicarbazide derived Schiff base complexes},
+  author={Chugh, Vaishali and Mohan, Chandra and Meena, Prem Lata and Mangla, Divyanshi and Zaidi, Noushi},
+  journal={Discover Materials},
+  year={2026},
+  publisher={Springer},
+  doi={10.1007/s43939-026-00771-8}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 10. Malaysian Journal of Chemistry -->
+          <article class="pub-card" data-category="journal" data-year="2026" data-keywords="simulation luminescence polycarbazole sno2 tio2 nanocomposites">
+            <div class="pub-year-badge">2026</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Research Article • Scopus</span>
+              <h3 class="pub-title">Simulation-Based Investigation of Tunable Luminescence and Optical Behavior of Polycarbazole-Based Metal Oxide Nanocomposites SnO₂ and TiO₂</h3>
+              <p class="pub-authors">Manish V. Patel, <span class="author-me">Divyanshi Mangla</span>, Vandana Yadav, Niharika*</p>
+              <div class="pub-venue">
+                <span><strong>Malaysian Journal of Chemistry</strong>, Vol. 28, No. 3.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill scopus">Scopus</span>
+                <span class="metric-pill impact">I.F. 0.43</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.55373/mjchem.v28i3.274" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Patel, M. V., Mangla, D., Yadav, V., & Niharika. (2026). Simulation-Based Investigation of Tunable Luminescence and Optical Behavior of Polycarbazole-Based Metal Oxide Nanocomposites SnO2 and TiO2. Malaysian Journal of Chemistry, 28(3).">
+                <span>Cite</span>
+              </button>
+              <button class="pub-action-btn bibtex-btn" data-bibtex="@article{patel2026simulation,
+  title={Simulation-Based Investigation of Tunable Luminescence and Optical Behavior of Polycarbazole-Based Metal Oxide Nanocomposites SnO2 and TiO2},
+  author={Patel, Manish V and Mangla, Divyanshi and Yadav, Vandana and Niharika},
+  journal={Malaysian Journal of Chemistry},
+  volume={28},
+  number={3},
+  year={2026},
+  doi={10.55373/mjchem.v28i3.274}
+}">
+                <span>BibTeX</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Book Chapter 1 -->
+          <article class="pub-card" data-category="chapter" data-year="2024" data-keywords="bioplastics medical devices biopolymers biomedical applications wiley book chapter">
+            <div class="pub-year-badge">2024</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Book Chapter • Wiley</span>
+              <h3 class="pub-title">Bioplastics in Medical Devices</h3>
+              <p class="pub-authors">Reshma Soman, <span class="author-me">Divyanshi Mangla</span>, Annu</p>
+              <div class="pub-venue">
+                <span>In: <strong>Biopolymers for Biomedical Applications</strong>, Wiley. ISBN: 978-1-11-986545-2</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Wiley Publishing</span>
+                <span class="metric-pill scopus">Biomedical Engineering</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1002/9781119865452.ch16" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Soman, R., Mangla, D., & Annu. (2024). Bioplastics in Medical Devices. In Biopolymers for Biomedical Applications, Wiley.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Book Chapter 2 -->
+          <article class="pub-card" data-category="chapter" data-year="2024" data-keywords="biosensors healthcare nanomaterials bioelectronics woodhead elsevier book chapter">
+            <div class="pub-year-badge">2024</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Book Chapter • Elsevier Woodhead</span>
+              <h3 class="pub-title">Biosensors: A Promising Approach for Healthcare Application</h3>
+              <p class="pub-authors">Bindu Mangla, Pooja Moyal, <span class="author-me">Divyanshi Mangla</span>, Sunil Kumar, Sudheesh K Shukla, Atul Sharma</p>
+              <div class="pub-venue">
+                <span>In: <strong>Functionalized Nanomaterials for Biosensing and Bioelectronics Applications</strong>, Woodhead Publishing, 305–333.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Woodhead / Elsevier</span>
+                <span class="metric-pill scopus">ISBN: 978-0-12-823829-5</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/C2020-0-00263-X" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, B., Moyal, P., Mangla, D., Kumar, S., Shukla, S. K., & Sharma, A. (2024). Biosensors: A promising approach for healthcare application. In Functionalized Nanomaterials for Biosensing and Bioelectronics Applications (pp. 305-333). Woodhead Publishing.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Book Chapter 3 -->
+          <article class="pub-card" data-category="chapter" data-year="2022" data-keywords="polysaccharide wastewater carbon nanotubes elsevier nano-polysaccharides book chapter">
+            <div class="pub-year-badge">2022</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Book Chapter • Elsevier</span>
+              <h3 class="pub-title">Enabling Polysaccharide Applications for Wastewater Treatment Using Carbon Nanotubes</h3>
+              <p class="pub-authors">Arshiya Abbasi, <span class="author-me">Divyanshi Mangla</span>, Saiqa Ikram</p>
+              <div class="pub-venue">
+                <span>In: <strong>Innovation in Nano-Polysaccharides for Eco-Sustainability</strong>, Elsevier, 311–324.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Elsevier</span>
+                <span class="metric-pill scopus">ISBN: 978-0-12-823439-6</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/B978-0-12-823439-6.00002-7" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Abbasi, A., Mangla, D., & Ikram, S. (2022). Enabling polysaccharide applications for wastewater treatment using carbon nanotubes. In Innovation in Nano-Polysaccharides for Eco-Sustainability (pp. 311-324). Elsevier.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Book Chapter 4 -->
+          <article class="pub-card" data-category="chapter" data-year="2021" data-keywords="chitosan bionanocomposites drug delivery woodhead regenerative medicine book chapter">
+            <div class="pub-year-badge">2021</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Book Chapter • Woodhead Publishing</span>
+              <h3 class="pub-title">Chitosan-Based Bionanocomposites in Drug Delivery</h3>
+              <p class="pub-authors">Suhail Ahmad, Arshiya Abbasi, Kaiser Manzoor, <span class="author-me">Divyanshi Mangla</span>, Shalu Aggarwal, Saiqa Ikram</p>
+              <div class="pub-venue">
+                <span>In: <strong>Bionanocomposites in Tissue Engineering and Regenerative Medicine</strong>, Woodhead Publishing, 187–203.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Woodhead Publishing</span>
+                <span class="metric-pill scopus">ISBN: 978-0-12-821280-6</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <a class="pub-action-btn doi" href="https://doi.org/10.1016/B978-0-12-821280-6.00024-6" target="_blank" rel="noopener noreferrer">
+                <span>DOI</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <button class="pub-action-btn copy-cite-btn" data-citation="Ahmad, S., Abbasi, A., Manzoor, K., Mangla, D., Aggarwal, S., & Ikram, S. (2021). Chitosan-based bionanocomposites in drug delivery. In Bionanocomposites in tissue engineering and regenerative medicine (pp. 187-203). Woodhead Publishing.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Book Chapter 5 -->
+          <article class="pub-card" data-category="chapter" data-year="2019" data-keywords="photocatalysis non-biodegradable pollutants nova science book chapter">
+            <div class="pub-year-badge">2019</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Book Chapter • Nova Science</span>
+              <h3 class="pub-title">Effective Removal of ‘Non-Biodegradable’ Pollutants from Contaminated Water</h3>
+              <p class="pub-authors"><span class="author-me">Divyanshi Mangla</span>, Arshiya Abbasi, Shalu Aggarwal, Kaiser Manzoor, Suhail Ahmad, Saiqa Ikram</p>
+              <div class="pub-venue">
+                <span>In: <strong>Photocatalysis: Perspective, Mechanism, and Applications</strong>, Nova Science Publications, 159–186.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Nova Science</span>
+                <span class="metric-pill scopus">ISBN: 978-1-53616-045-1</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, D., Abbasi, A., Aggarwal, S., Manzoor, K., Ahmad, S., & Ikram, S. (2019). Effective Removal of ‘Non-Biodegradable’ Pollutants from Contaminated Water. In Photocatalysis: Perspective, Mechanism, and Applications (pp. 159-186). Nova Science.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Book Chapter 6 -->
+          <article class="pub-card" data-category="chapter" data-year="2019" data-keywords="enzymatic modification biopolymeric surfaces co2 sequestration nova science book chapter">
+            <div class="pub-year-badge">2019</div>
+            <div class="pub-content">
+              <span class="pub-type-tag">Book Chapter • Nova Science</span>
+              <h3 class="pub-title">Enzymatic Modification of Biopolymeric Surfaces for CO₂ Sequestration</h3>
+              <p class="pub-authors">Shalu Aggarwal, Arshiya Abbasi, <span class="author-me">Divyanshi Mangla</span>, Suhail Ahmad, Kaiser Manzoor, Saiqa Ikram</p>
+              <div class="pub-venue">
+                <span>In: <strong>Biocomposites in Bio-Medicine</strong>, Nova Science Publications, 1–28.</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill impact">Nova Science</span>
+                <span class="metric-pill scopus">ISBN: 978-1-53616-248-6</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <button class="pub-action-btn copy-cite-btn" data-citation="Aggarwal, S., Abbasi, A., Mangla, D., Ahmad, S., Manzoor, K., & Ikram, S. (2019). Enzymatic Modification of Biopolymeric Surfaces for CO2 Sequestration. In Biocomposites in Bio-Medicine (pp. 1-28). Nova Science.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Patent Card in List -->
+          <article class="pub-card" data-category="patent" data-year="2025" data-keywords="patent germany chitosan matcha green tea nickel-ferrite nanoparticles system production">
+            <div class="pub-year-badge">2025</div>
+            <div class="pub-content">
+              <span class="pub-type-tag" style="color: var(--accent-mint);">Published Patent • Germany</span>
+              <h3 class="pub-title">A system for the production of a polymer composite based on Chitosan, Matcha green tea and nickel-ferrite nanoparticles</h3>
+              <p class="pub-authors"><span class="author-me">Dr. Divyanshi Mangla</span> & Co-inventors</p>
+              <div class="pub-venue">
+                <span>Federal Republic of Germany • Certificate No: <strong>G25189DE</strong> (Published: 22 April 2025)</span>
+              </div>
+              <div class="pub-metrics-pills">
+                <span class="metric-pill q1">Patent Registered</span>
+                <span class="metric-pill impact">German Patent Office</span>
+              </div>
+            </div>
+            <div class="pub-actions">
+              <button class="pub-action-btn copy-cite-btn" data-citation="Mangla, D. et al. (2025). A system for the production of a polymer composite based on Chitosan, Matcha green tea and nickel-ferrite nanoparticles. German Patent Certificate No. G25189DE.">
+                <span>Cite</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching & Leadership Section -->
     <section class="section" id="teaching">
-      <div class="container section-grid">
-        <div>
-          <p class="section-kicker">Teaching</p>
-          <h2>Courses taught</h2>
-          <p class="section-intro">Undergraduate chemistry and interdisciplinary science courses spanning foundational, environmental and materials chemistry.</p>
-        </div>
-        <div class="course-list">
-          <span>Engineering Chemistry</span>
-          <span>Chemistry of Elements</span>
-          <span>Chemistry in Everyday Life</span>
-          <span>Green Processes of Chemistry</span>
-          <span>Advanced Material Chemistry</span>
-          <span>Inorganic and Organic Chemistry-I</span>
-          <span>Natural and Anthropogenic Hazards</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark" id="achievements">
       <div class="container">
-        <p class="section-kicker light">Achievements & Service</p>
-        <h2>Academic highlights</h2>
-        <div class="achievement-grid">
-          <article><strong>CSIR-UGC NET-JRF</strong><span>All India Rank 22 • 2024</span></article>
-          <article><strong>Best Poster Award</strong><span>Indo-Australian Webinar FCMSET • 2021</span></article>
-          <article><strong>Best Poster Award</strong><span>Nanotechnology for Better Living • 2021</span></article>
-          <article><strong>Winner – Oral Presentation</strong><span>Symposium on Environment Protection • 2017</span></article>
-          <article><strong>Club Convenor</strong><span>Dr. APJ Abdul Kalam Science Club • K.R. Mangalam University</span></article>
-          <article><strong>Moderator</strong><span>AMGSE International Conference • 2025</span></article>
+        <div class="section-header">
+          <span class="section-kicker">Pedagogy & Leadership</span>
+          <h2 class="section-title">Teaching & Institutional Service</h2>
+          <p class="section-desc">Fostering analytical curiosity, chemical intuition, and laboratory excellence across undergraduate and postgraduate curricula.</p>
+        </div>
+
+        <h3 style="margin-bottom: 18px; font-size: 1.25rem;">Courses Taught</h3>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div>
+              <div class="course-code">ENCH101</div>
+              <h4 class="course-title">Engineering Chemistry</h4>
+            </div>
+            <span class="course-tag">Undergraduate Engineering</span>
+          </div>
+
+          <div class="course-card">
+            <div>
+              <div class="course-code">UCH102</div>
+              <h4 class="course-title">Chemistry of Elements</h4>
+            </div>
+            <span class="course-tag">Inorganic Chemistry</span>
+          </div>
+
+          <div class="course-card">
+            <div>
+              <div class="course-code">OEC086</div>
+              <h4 class="course-title">Chemistry in Everyday Life</h4>
+            </div>
+            <span class="course-tag">Open Elective Course</span>
+          </div>
+
+          <div class="course-card">
+            <div>
+              <div class="course-code">SCCH310</div>
+              <h4 class="course-title">Green Processes of Chemistry</h4>
+            </div>
+            <span class="course-tag">Sustainable & Green Science</span>
+          </div>
+
+          <div class="course-card">
+            <div>
+              <div class="course-code">SCCH403</div>
+              <h4 class="course-title">Advanced Material Chemistry</h4>
+            </div>
+            <span class="course-tag">Nanomaterials & Polymers</span>
+          </div>
+
+          <div class="course-card">
+            <div>
+              <div class="course-code">BSFSCH109</div>
+              <h4 class="course-title">Inorganic and Organic Chemistry-I</h4>
+            </div>
+            <span class="course-tag">Forensic Science Core</span>
+          </div>
+
+          <div class="course-card">
+            <div>
+              <div class="course-code">UEV104</div>
+              <h4 class="course-title">Natural and Anthropogenic Hazards</h4>
+            </div>
+            <span class="course-tag">Environmental Science</span>
+          </div>
+        </div>
+
+        <!-- Leadership Positions -->
+        <div class="leadership-grid">
+          <div class="leadership-card">
+            <h4 class="leadership-role">Club Convenor – Dr. APJ Abdul Kalam Science Club</h4>
+            <div class="leadership-org">K.R. Mangalam University • Sept 2025 – Present</div>
+            <p class="leadership-desc">
+              Spearheading intra- and inter-university science symposiums, outreach seminars, laboratory demonstrations, and technical exhibitions to cultivate scientific temperament among students.
+            </p>
+          </div>
+
+          <div class="leadership-card">
+            <h4 class="leadership-role">Conference Moderator & Session Organizer</h4>
+            <div class="leadership-org">AMGSE-2025 International Conference • March 2025</div>
+            <p class="leadership-desc">
+              Organized technical tracks and served as conference moderator for the 2nd International Conference on Advanced Materials for Green Chemistry and Sustainable Environment.
+            </p>
+          </div>
+
+          <div class="leadership-card">
+            <h4 class="leadership-role">Member, Poster Evaluation Committee</h4>
+            <div class="leadership-org">Indo-Australian Conference on Biomimicry • Feb 2025</div>
+            <p class="leadership-desc">
+              Evaluated scholarly submissions at the Indo-Australian Conference & Workshop on Biomimicry: Nature’s Perfect Innovation System, hosted by Jamia Millia Islamia.
+            </p>
+          </div>
+
+          <div class="leadership-card">
+            <h4 class="leadership-role">FDP Coordinator & Lead Organizer</h4>
+            <div class="leadership-org">School of Basic & Applied Sciences • May 2025</div>
+            <p class="leadership-desc">
+              Successfully planned and conducted the Faculty Development Programme on “Indian Knowledge System” at K.R. Mangalam University.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <p class="section-kicker">Contact</p>
-          <h2>Research, teaching & academic collaboration</h2>
-          <p class="section-intro">For academic correspondence, research collaboration and scholarly enquiries, please use the email link below or connect through my academic profiles.</p>
-          <a class="btn primary" href="mailto:divyanshimangla96@gmail.com">Email me</a>
+    <!-- Honors & Certifications Section -->
+    <section class="section section-tinted" id="achievements">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-kicker">Honors & Distinction</span>
+          <h2 class="section-title">Awards & Academic Recognitions</h2>
+          <p class="section-desc">Recognition received for research excellence, innovative presentations, and continuous academic enrichment.</p>
         </div>
-        <div class="contact-card">
-          <div><span>Email</span><a href="mailto:divyanshimangla96@gmail.com">divyanshimangla96@gmail.com</a></div>
-          <div><span>Current Institution</span><strong>K.R. Mangalam University, Gurugram</strong></div>
-          <div><span>ORCID</span><a href="https://orcid.org/0000-0003-4237-7597" target="_blank" rel="noopener">0000-0003-4237-7597 ↗</a></div>
-          <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/divyanshi-mangla-b02940318" target="_blank" rel="noopener">divyanshi-mangla-b02940318 ↗</a></div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <div class="achievement-icon">🏆</div>
+            <h3 class="achievement-title">CSIR-UGC NET-JRF (AIR 22)</h3>
+            <p class="achievement-detail">Secured prestigious national Junior Research Fellowship with All India Rank 22 in Chemical Sciences.</p>
+            <span class="achievement-year">2024</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🎖️</div>
+            <h3 class="achievement-title">Best Poster Award</h3>
+            <p class="achievement-detail">INDO-AUSTRALIAN Webinar on Frontiers in Chemical and Materials Sciences for Energy and Technology (FCMSET-2021).</p>
+            <span class="achievement-year">2021</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🎖️</div>
+            <h3 class="achievement-title">Best Poster Award</h3>
+            <p class="achievement-detail">7th Hybrid International Conference on “Nanotechnology for Better Living” (NBL-2021) for Chitosan/PVP fluoroquinolone remediation.</p>
+            <span class="achievement-year">2021</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🥇</div>
+            <h3 class="achievement-title">Winner – Oral Presentation</h3>
+            <p class="achievement-detail">Symposium on ‘Environment Protection’ organized by Department of Chemistry, Manav Rachna International University.</p>
+            <span class="achievement-year">2017</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">📜</div>
+            <h3 class="achievement-title">ACS Reviewer Lab Certification</h3>
+            <p class="achievement-detail">Certified by the American Chemical Society (ACS) in comprehensive scientific peer-review ethics and practices.</p>
+            <span class="achievement-year">2020</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🔬</div>
+            <h3 class="achievement-title">Elsevier Research Certificates</h3>
+            <p class="achievement-detail">Completed certified modules: "How to Secure Funding", "Metrics to Boost Networking", and "Evidence-Based Research".</p>
+            <span class="achievement-year">2020</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Collaboration Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-text">
+            <span class="section-kicker">Connect & Collaborate</span>
+            <h2 class="section-title">Research Inquiries & Academic Mentorship</h2>
+            <p class="section-desc" style="margin-bottom: 24px;">
+              Open to collaborative research projects, student supervision, guest lectures, and institutional partnerships in the fields of sustainable biopolymers, water decontamination, and green nanomaterials.
+            </p>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="mailto:divyanshimangla96@gmail.com">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>Write an Email</span>
+              </a>
+              <a class="btn btn-secondary" href="assets/Dr_Divyanshi_Mangla_CV.docx" download>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download CV (Docx)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card-box">
+            <h3 style="margin-bottom: 18px; font-size: 1.2rem;">Official Academic Details</h3>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">Email Address</span>
+                <span class="contact-val">
+                  <a href="mailto:divyanshimangla96@gmail.com">divyanshimangla96@gmail.com</a>
+                </span>
+                <button class="copy-email-btn" id="copy-email-btn" data-email="divyanshimangla96@gmail.com">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy Address</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">Current Academic Institution</span>
+                <span class="contact-val">School of Basic & Applied Sciences</span>
+                <span style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 2px;">K.R. Mangalam University, Sohna Road, Gurugram, Haryana</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">ORCID Identifier</span>
+                <span class="contact-val">
+                  <a href="https://orcid.org/0000-0003-4237-7597" target="_blank" rel="noopener noreferrer">0000-0003-4237-7597 ↗</a>
+                </span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-label">Professional Network</span>
+                <span class="contact-val">
+                  <a href="https://www.linkedin.com/in/divyanshi-mangla-b02940318" target="_blank" rel="noopener noreferrer">divyanshi-mangla-b02940318 ↗</a>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- Site Footer -->
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Dr. Divyanshi Mangla. Academic website.</p>
-      <a href="#top">Back to top ↑</a>
+      <div class="footer-copy">
+        <p>© <span id="current-year">2026</span> Dr. Divyanshi Mangla. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 4px;">Assistant Professor of Chemistry, K.R. Mangalam University | Optimized for Vercel</p>
+      </div>
+
+      <div class="footer-links">
+        <a class="back-to-top" href="#top-header">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- BibTeX Modal -->
+  <div class="modal-backdrop" id="bibtex-modal" role="dialog" aria-modal="true" aria-labelledby="modal-bibtex-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-bibtex-title">BibTeX Citation</h3>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre class="modal-code" id="bibtex-code"></pre>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" id="modal-dismiss-btn">Close</button>
+        <button class="btn btn-primary btn-sm" id="copy-bibtex-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Copy BibTeX</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "name": "dr-divyanshi-mangla-portfolio",
+  "version": "1.0.0",
+  "description": "Academic Portfolio Website for Dr. Divyanshi Mangla",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Velqore/DivyanshiMAM-s-SIte.git"
+  },
+  "keywords": [
+    "portfolio",
+    "chemistry",
+    "academic",
+    "dr-divyanshi-mangla",
+    "research"
+  ],
+  "author": "Dr. Divyanshi Mangla",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
