@@ -13,7 +13,7 @@
  *  10. Mobile nav drawer
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPortfolio() {
 
   /* ===================================================
      1. PRELOADER
@@ -31,9 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let prog = 0;
   let stageIdx = 0;
+  let preloaderDismissed = false;
+
+  const dismissPreloader = () => {
+    if (preloaderDismissed) return;
+    preloaderDismissed = true;
+    if (loaderBar) loaderBar.style.width = '100%';
+    if (loaderSub) loaderSub.textContent = stages[stages.length - 1];
+    setTimeout(() => {
+      preloader?.classList.add('fade-out');
+      setTimeout(() => {
+        if (preloader) preloader.style.display = 'none';
+      }, 560);
+    }, 200);
+  };
 
   const tick = setInterval(() => {
-    prog = Math.min(prog + Math.floor(Math.random() * 22) + 14, 100);
+    prog = Math.min(prog + Math.floor(Math.random() * 25) + 18, 100);
 
     if (loaderBar) loaderBar.style.width = `${prog}%`;
 
@@ -47,15 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (prog >= 100) {
       clearInterval(tick);
-      if (loaderSub) loaderSub.textContent = stages[stages.length - 1];
-      setTimeout(() => {
-        preloader?.classList.add('fade-out');
-        setTimeout(() => {
-          if (preloader) preloader.style.display = 'none';
-        }, 560);
-      }, 280);
+      dismissPreloader();
     }
-  }, 95);
+  }, 80);
+
+  // Safety fallback: maximum 2 seconds
+  setTimeout(() => {
+    clearInterval(tick);
+    dismissPreloader();
+  }, 2000);
 
 
   /* ===================================================
@@ -379,5 +393,9 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggle?.setAttribute('aria-expanded', 'false');
     }
   });
-
-});
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+  initPortfolio();
+}

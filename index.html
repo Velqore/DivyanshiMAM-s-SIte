@@ -62,6 +62,16 @@
       </div>
     </div>
   </div>
+  <script>
+    /* Safety fallback: ensure preloader is dismissed even on network drop or blocking */
+    setTimeout(function() {
+      var p = document.getElementById('site-preloader');
+      if (p && !p.classList.contains('fade-out')) {
+        p.classList.add('fade-out');
+        setTimeout(function() { if (p) p.style.display = 'none'; }, 600);
+      }
+    }, 2500);
+  </script>
 
   <!-- Ambient background -->
   <div class="bg-ambient" aria-hidden="true">
@@ -998,6 +1008,6 @@
   <!-- Toast -->
   <div class="toast" id="toast-notification" role="status" aria-live="polite"></div>
 
-  <script src="script.js"></script>
+  <script type="module" src="/script.js"></script>
 </body>
 </html>
