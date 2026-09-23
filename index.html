@@ -73,8 +73,10 @@
     }, 2500);
   </script>
 
-  <!-- Ambient background -->
+  <!-- Technical Grid & Ambient background -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
   <div class="bg-ambient" aria-hidden="true">
+    <div class="blob-center"></div>
     <div class="blob-1"></div>
     <div class="blob-2"></div>
   </div>
@@ -181,11 +183,13 @@
           </a>
         </div>
 
-        <!-- Scroll hint -->
-        <div class="hero-scroll-hint" aria-hidden="true">
-          <div class="scroll-bar"></div>
-          <span>Scroll</span>
-        </div>
+        <!-- Aesthetic floating scroll indicator -->
+        <a class="hero-scroll-indicator" href="#stats-section" aria-label="Scroll to explore portfolio">
+          <div class="scroll-mouse">
+            <span class="scroll-wheel"></span>
+          </div>
+          <span class="scroll-label">EXPLORE</span>
+        </a>
 
       </div>
     </section>

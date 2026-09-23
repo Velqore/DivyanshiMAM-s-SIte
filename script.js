@@ -149,40 +149,40 @@ function initPortfolio() {
 
 
   /* ===================================================
-     5. 3D TILT on BENTO CARDS — mouse perspective
+     5. 3D TILT & CURSOR SPOTLIGHT on BENTO CARDS & STATS
      =================================================== */
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const spotlightCards = document.querySelectorAll('.bento-card, .stat-tile');
 
-  if (!prefersReducedMotion) {
-    const tiltCards = document.querySelectorAll('.bento-card');
-    const TILT_STRENGTH = 6; // max degrees
+  spotlightCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
 
-    tiltCards.forEach((card) => {
-      card.style.transition = 'transform 0.12s ease, border-color 0.3s ease, box-shadow 0.3s ease';
-
-      card.addEventListener('mousemove', (e) => {
-        const rect  = card.getBoundingClientRect();
-        const cx    = rect.left + rect.width  / 2;
-        const cy    = rect.top  + rect.height / 2;
-        const dx    = (e.clientX - cx) / (rect.width  / 2);
-        const dy    = (e.clientY - cy) / (rect.height / 2);
-        const rotY  =  dx * TILT_STRENGTH;
-        const rotX  = -dy * TILT_STRENGTH;
-
+      if (!prefersReducedMotion && card.classList.contains('bento-card')) {
+        const cx   = rect.width  / 2;
+        const cy   = rect.height / 2;
+        const dx   = (x - cx) / cx;
+        const dy   = (y - cy) / cy;
+        const rotY =  dx * 5;
+        const rotX = -dy * 5;
         card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(4px)`;
-      });
+      }
+    });
 
-      card.addEventListener('mouseleave', () => {
+    card.addEventListener('mouseleave', () => {
+      if (!prefersReducedMotion && card.classList.contains('bento-card')) {
         card.style.transition = 'transform 0.45s ease, border-color 0.3s ease, box-shadow 0.3s ease';
         card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0)';
-
-        // Reset to fast transition after the ease-out completes
         setTimeout(() => {
           card.style.transition = 'transform 0.12s ease, border-color 0.3s ease, box-shadow 0.3s ease';
         }, 460);
-      });
+      }
     });
-  }
+  });
 
 
   /* ===================================================
