@@ -1,10 +1,10 @@
 /**
  * Dr. Divyanshi Mangla - Academic Portfolio Scripts
- * - Scientific Preloader with status progress
- * - Interactive 3D Card Tilt with Specular Reflection
- * - Interactive Molecular 3D Particle Canvas
+ * - Dynamic Hero Text Rotation Animation
+ * - Scientific Preloader
+ * - Ambient Molecular Particle Canvas
  * - Theme Switcher (Dark/Light)
- * - Animated Metrics Counter
+ * - Animated Stats Counter
  * - Publications Search & Category Filter
  * - 1-Click Citation & BibTeX Modal
  * - Scrollspy & Mobile Navigation
@@ -21,17 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const statusMessages = [
     'Synthesizing Bio-Polymer Framework...',
-    'Orienting Magnetic Nanocomposites...',
-    'Calibrating Isotherm Adsorption Models...',
+    'Calibrating Adsorption Models...',
     'Indexing 870+ Scholarly Citations...',
-    'Initializing Laboratory Profile...'
+    'Academic Profile Ready!'
   ];
 
   let progress = 0;
   let statusIndex = 0;
 
   const preloaderInterval = setInterval(() => {
-    progress += Math.floor(Math.random() * 22) + 12;
+    progress += Math.floor(Math.random() * 25) + 15;
     if (progress > 100) progress = 100;
 
     if (preloaderBar) {
@@ -48,111 +47,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (progress >= 100) {
       clearInterval(preloaderInterval);
-      if (preloaderStatus) preloaderStatus.textContent = 'Laboratory Profile Ready!';
+      if (preloaderStatus) preloaderStatus.textContent = 'Academic Profile Ready!';
       setTimeout(() => {
         preloader?.classList.add('fade-out');
         setTimeout(() => {
           if (preloader) preloader.style.display = 'none';
-        }, 650);
-      }, 350);
+        }, 500);
+      }, 250);
     }
-  }, 120);
+  }, 100);
 
   // ========================================================
-  // 2. 3D CARD TILT & SPECULAR REFLECTION ENGINE
+  // 2. DYNAMIC TEXT ANIMATION IN HERO SUBTITLE
   // ========================================================
-  const cards3D = document.querySelectorAll('.card-3d');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dynamicTextEl = document.getElementById('role-dynamic-text');
+  const researchDomains = [
+    'Sustainable Materials',
+    'Wastewater Remediation',
+    'Biopolymer Composites',
+    'Antibiotic Decontamination',
+    'Magnetic Bio-adsorbents',
+    'Green Nanotechnology'
+  ];
 
-  if (!prefersReducedMotion) {
-    cards3D.forEach((card) => {
-      let bounds;
+  let currentDomainIndex = 0;
 
-      function onMouseEnter(e) {
-        bounds = card.getBoundingClientRect();
-      }
+  if (dynamicTextEl) {
+    setInterval(() => {
+      // Fade out
+      dynamicTextEl.style.opacity = '0';
+      dynamicTextEl.style.transform = 'translateY(6px)';
 
-      function onMouseMove(e) {
-        if (!bounds) bounds = card.getBoundingClientRect();
-        const mouseX = e.clientX - bounds.left;
-        const mouseY = e.clientY - bounds.top;
-
-        // Set CSS variables for dynamic specular reflection
-        card.style.setProperty('--mouse-x', `${mouseX}px`);
-        card.style.setProperty('--mouse-y', `${mouseY}px`);
-
-        // Compute 3D rotation angles (-8 to +8 degrees)
-        const centerX = bounds.width / 2;
-        const centerY = bounds.height / 2;
-        const rotateX = ((mouseY - centerY) / centerY) * -7;
-        const rotateY = ((mouseX - centerX) / centerX) * 7;
-
-        card.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.014, 1.014, 1.014)`;
-      }
-
-      function onMouseLeave() {
-        card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-        bounds = null;
-      }
-
-      card.addEventListener('mouseenter', onMouseEnter, { passive: true });
-      card.addEventListener('mousemove', onMouseMove, { passive: true });
-      card.addEventListener('mouseleave', onMouseLeave, { passive: true });
-    });
+      setTimeout(() => {
+        currentDomainIndex = (currentDomainIndex + 1) % researchDomains.length;
+        dynamicTextEl.textContent = researchDomains[currentDomainIndex];
+        // Fade in
+        dynamicTextEl.style.opacity = '1';
+        dynamicTextEl.style.transform = 'translateY(0)';
+      }, 260);
+    }, 2800);
   }
 
   // ========================================================
-  // 3. MOLECULAR 3D PARTICLE CANVAS BACKGROUND
+  // 3. SUBTLE MOLECULAR PARTICLE CANVAS
   // ========================================================
   const canvas = document.getElementById('molecular-canvas');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
-
-    let mouse = { x: width / 2, y: height / 2, active: false };
 
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     });
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.active = true;
-    }, { passive: true });
-
-    // Generate molecular nodes (atoms)
-    const particleCount = Math.min(Math.floor((width * height) / 22000), 55);
+    const particleCount = Math.min(Math.floor((width * height) / 28000), 40);
     const particles = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.45,
-        vy: (Math.random() - 0.5) * 0.45,
-        radius: Math.random() * 2.4 + 1.2,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 2 + 1,
         color: i % 3 === 0 ? '#10b981' : i % 3 === 1 ? '#06b6d4' : '#f59e0b',
       });
     }
 
-    function renderMolecularCanvas() {
+    function renderCanvas() {
       ctx.clearRect(0, 0, width, height);
 
-      // Connect covalent bonds between close nodes
+      // Draw subtle covalent connecting lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
-            const alpha = (1 - dist / 130) * 0.18;
+          if (dist < 120) {
+            const alpha = (1 - dist / 120) * 0.14;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 0.8;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -160,39 +140,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Render atom nodes
+      // Draw nodes
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Bounce on boundary
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        // Subtle mouse interaction
-        if (mouse.active) {
-          const mdx = p.x - mouse.x;
-          const mdy = p.y - mouse.y;
-          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-          if (mdist < 140) {
-            p.x += (mdx / mdist) * 0.7;
-            p.y += (mdy / mdist) * 0.7;
-          }
-        }
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 6;
         ctx.fill();
-        ctx.shadowBlur = 0;
       });
 
-      requestAnimationFrame(renderMolecularCanvas);
+      requestAnimationFrame(renderCanvas);
     }
 
-    renderMolecularCanvas();
+    renderCanvas();
   }
 
   // ========================================================
@@ -241,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================================
-  // 6. ANIMATED METRICS COUNTER
+  // 6. ANIMATED STATS COUNTER
   // ========================================================
   const statNumbers = document.querySelectorAll('.stat-number');
   let animated = false;
@@ -250,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach((el) => {
       const target = parseInt(el.getAttribute('data-target'), 10);
       if (isNaN(target)) return;
-      const duration = 1500;
+      const duration = 1400;
       const startTime = performance.now();
 
       const updateCounter = (currentTime) => {
@@ -283,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.3 }
     );
     observer.observe(statsStrip);
   }
@@ -293,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================================
   const filterButtons = document.querySelectorAll('.filter-btn');
   const searchInput = document.getElementById('pub-search');
-  const pubCards = document.querySelectorAll('.pub-card');
+  const pubRows = document.querySelectorAll('.pub-row');
   const pubContainer = document.getElementById('pub-container');
 
   let activeCategory = 'all';
@@ -302,13 +267,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterPublications = () => {
     let visibleCount = 0;
 
-    pubCards.forEach((card) => {
-      const category = card.getAttribute('data-category');
-      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-      const title = (card.querySelector('.pub-title')?.textContent || '').toLowerCase();
-      const authors = (card.querySelector('.pub-authors')?.textContent || '').toLowerCase();
-      const venue = (card.querySelector('.pub-venue')?.textContent || '').toLowerCase();
-      const year = card.getAttribute('data-year') || '';
+    pubRows.forEach((row) => {
+      const category = row.getAttribute('data-category');
+      const keywords = (row.getAttribute('data-keywords') || '').toLowerCase();
+      const title = (row.querySelector('.pub-heading')?.textContent || '').toLowerCase();
+      const authors = (row.querySelector('.pub-byline')?.textContent || '').toLowerCase();
+      const venue = (row.querySelector('.pub-venue-line')?.textContent || '').toLowerCase();
+      const year = row.getAttribute('data-year') || '';
 
       const contentString = `${title} ${keywords} ${authors} ${venue} ${year}`.toLowerCase();
 
@@ -316,10 +281,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesSearch = !searchQuery || contentString.includes(searchQuery);
 
       if (matchesCategory && matchesSearch) {
-        card.style.display = 'block';
+        row.style.display = 'grid';
         visibleCount++;
       } else {
-        card.style.display = 'none';
+        row.style.display = 'none';
       }
     });
 
@@ -328,11 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!emptyState) {
         emptyState = document.createElement('div');
         emptyState.id = 'pub-empty-state';
-        emptyState.className = 'bento-card';
         emptyState.style.textAlign = 'center';
-        emptyState.style.padding = '40px 24px';
+        emptyState.style.padding = '36px 20px';
         emptyState.style.color = 'var(--text-muted)';
-        emptyState.innerHTML = '<p style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">No publications match your filter or search query.</p><p style="margin-top: 8px; font-size: 0.9rem;">Try clearing your search terms or selecting "All Works".</p>';
+        emptyState.style.background = 'var(--bg-surface)';
+        emptyState.style.borderRadius = 'var(--radius-md)';
+        emptyState.style.border = '1px solid var(--border-card)';
+        emptyState.innerHTML = '<p style="font-size: 1.05rem; font-weight: 700; color: var(--text-main);">No publications found.</p><p style="margin-top: 6px; font-size: 0.88rem;">Try clearing your search query or selecting "All Works".</p>';
         pubContainer?.appendChild(emptyState);
       }
       emptyState.style.display = 'block';
@@ -448,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
       <span>${message}</span>
     `;
 
@@ -457,8 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 350);
-    }, 2600);
+      setTimeout(() => toast.remove(), 300);
+    }, 2400);
   }
 
   // ========================================================
@@ -468,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navAnchorLinks = document.querySelectorAll('.nav-link');
 
   const onScroll = () => {
-    const scrollPos = window.scrollY + 130;
+    const scrollPos = window.scrollY + 120;
     sections.forEach((sec) => {
       const top = sec.offsetTop;
       const height = sec.offsetHeight;
@@ -488,7 +455,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Update current year
   const currentYearEl = document.getElementById('current-year');
   if (currentYearEl) {
     currentYearEl.textContent = new Date().getFullYear();
