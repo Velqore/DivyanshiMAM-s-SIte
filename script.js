@@ -1,15 +1,206 @@
 /**
  * Dr. Divyanshi Mangla - Academic Portfolio Scripts
- * Handles: Theme toggle, stats counter, publication search & filtering,
- * citation copy, BibTeX modal, scrollspy, and mobile drawer.
+ * - Scientific Preloader with status progress
+ * - Interactive 3D Card Tilt with Specular Reflection
+ * - Interactive Molecular 3D Particle Canvas
+ * - Theme Switcher (Dark/Light)
+ * - Animated Metrics Counter
+ * - Publications Search & Category Filter
+ * - 1-Click Citation & BibTeX Modal
+ * - Scrollspy & Mobile Navigation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. THEME TOGGLE (DARK / LIGHT) ---
+
+  // ========================================================
+  // 1. SCIENTIFIC PRELOADER ANIMATION
+  // ========================================================
+  const preloader = document.getElementById('site-preloader');
+  const preloaderBar = document.getElementById('preloader-bar');
+  const preloaderStatus = document.getElementById('preloader-status');
+
+  const statusMessages = [
+    'Synthesizing Bio-Polymer Framework...',
+    'Orienting Magnetic Nanocomposites...',
+    'Calibrating Isotherm Adsorption Models...',
+    'Indexing 870+ Scholarly Citations...',
+    'Initializing Laboratory Profile...'
+  ];
+
+  let progress = 0;
+  let statusIndex = 0;
+
+  const preloaderInterval = setInterval(() => {
+    progress += Math.floor(Math.random() * 22) + 12;
+    if (progress > 100) progress = 100;
+
+    if (preloaderBar) {
+      preloaderBar.style.width = `${progress}%`;
+    }
+
+    if (preloaderStatus && progress < 90) {
+      const nextIndex = Math.min(Math.floor((progress / 100) * statusMessages.length), statusMessages.length - 1);
+      if (nextIndex !== statusIndex) {
+        statusIndex = nextIndex;
+        preloaderStatus.textContent = statusMessages[statusIndex];
+      }
+    }
+
+    if (progress >= 100) {
+      clearInterval(preloaderInterval);
+      if (preloaderStatus) preloaderStatus.textContent = 'Laboratory Profile Ready!';
+      setTimeout(() => {
+        preloader?.classList.add('fade-out');
+        setTimeout(() => {
+          if (preloader) preloader.style.display = 'none';
+        }, 650);
+      }, 350);
+    }
+  }, 120);
+
+  // ========================================================
+  // 2. 3D CARD TILT & SPECULAR REFLECTION ENGINE
+  // ========================================================
+  const cards3D = document.querySelectorAll('.card-3d');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    cards3D.forEach((card) => {
+      let bounds;
+
+      function onMouseEnter(e) {
+        bounds = card.getBoundingClientRect();
+      }
+
+      function onMouseMove(e) {
+        if (!bounds) bounds = card.getBoundingClientRect();
+        const mouseX = e.clientX - bounds.left;
+        const mouseY = e.clientY - bounds.top;
+
+        // Set CSS variables for dynamic specular reflection
+        card.style.setProperty('--mouse-x', `${mouseX}px`);
+        card.style.setProperty('--mouse-y', `${mouseY}px`);
+
+        // Compute 3D rotation angles (-8 to +8 degrees)
+        const centerX = bounds.width / 2;
+        const centerY = bounds.height / 2;
+        const rotateX = ((mouseY - centerY) / centerY) * -7;
+        const rotateY = ((mouseX - centerX) / centerX) * 7;
+
+        card.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.014, 1.014, 1.014)`;
+      }
+
+      function onMouseLeave() {
+        card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        bounds = null;
+      }
+
+      card.addEventListener('mouseenter', onMouseEnter, { passive: true });
+      card.addEventListener('mousemove', onMouseMove, { passive: true });
+      card.addEventListener('mouseleave', onMouseLeave, { passive: true });
+    });
+  }
+
+  // ========================================================
+  // 3. MOLECULAR 3D PARTICLE CANVAS BACKGROUND
+  // ========================================================
+  const canvas = document.getElementById('molecular-canvas');
+  if (canvas && !prefersReducedMotion) {
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    let mouse = { x: width / 2, y: height / 2, active: false };
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    }, { passive: true });
+
+    // Generate molecular nodes (atoms)
+    const particleCount = Math.min(Math.floor((width * height) / 22000), 55);
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        radius: Math.random() * 2.4 + 1.2,
+        color: i % 3 === 0 ? '#10b981' : i % 3 === 1 ? '#06b6d4' : '#f59e0b',
+      });
+    }
+
+    function renderMolecularCanvas() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Connect covalent bonds between close nodes
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 130) {
+            const alpha = (1 - dist / 130) * 0.18;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Render atom nodes
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce on boundary
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        // Subtle mouse interaction
+        if (mouse.active) {
+          const mdx = p.x - mouse.x;
+          const mdy = p.y - mouse.y;
+          const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mdist < 140) {
+            p.x += (mdx / mdist) * 0.7;
+            p.y += (mdy / mdist) * 0.7;
+          }
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      requestAnimationFrame(renderMolecularCanvas);
+    }
+
+    renderMolecularCanvas();
+  }
+
+  // ========================================================
+  // 4. THEME TOGGLE (DARK / LIGHT)
+  // ========================================================
   const themeToggleBtn = document.getElementById('theme-toggle');
   const htmlElement = document.documentElement;
 
-  // Retrieve saved theme or use system preference
   const savedTheme = localStorage.getItem('dm-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
@@ -23,7 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast(`Switched to ${newTheme} mode`);
   });
 
-  // --- 2. MOBILE NAVIGATION DRAWER ---
+  // ========================================================
+  // 5. MOBILE NAVIGATION DRAWER
+  // ========================================================
   const mobileToggle = document.getElementById('mobile-toggle');
   const navLinks = document.getElementById('main-nav');
 
@@ -47,7 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 3. ANIMATED METRICS COUNTER ---
+  // ========================================================
+  // 6. ANIMATED METRICS COUNTER
+  // ========================================================
   const statNumbers = document.querySelectorAll('.stat-number');
   let animated = false;
 
@@ -55,13 +250,12 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach((el) => {
       const target = parseInt(el.getAttribute('data-target'), 10);
       if (isNaN(target)) return;
-      const duration = 1600; // ms
+      const duration = 1500;
       const startTime = performance.now();
 
       const updateCounter = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Ease-out cubic formula
         const easeOut = 1 - Math.pow(1 - progress, 3);
         const currentCount = Math.floor(easeOut * target);
 
@@ -89,12 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
     observer.observe(statsStrip);
   }
 
-  // --- 4. PUBLICATIONS SEARCH & FILTERING ---
+  // ========================================================
+  // 7. PUBLICATIONS SEARCH & FILTERING
+  // ========================================================
   const filterButtons = document.querySelectorAll('.filter-btn');
   const searchInput = document.getElementById('pub-search');
   const pubCards = document.querySelectorAll('.pub-card');
@@ -120,27 +316,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesSearch = !searchQuery || contentString.includes(searchQuery);
 
       if (matchesCategory && matchesSearch) {
-        card.style.display = 'grid';
+        card.style.display = 'block';
         visibleCount++;
       } else {
         card.style.display = 'none';
       }
     });
 
-    // Handle "no results" state
     let emptyState = document.getElementById('pub-empty-state');
     if (visibleCount === 0) {
       if (!emptyState) {
         emptyState = document.createElement('div');
         emptyState.id = 'pub-empty-state';
+        emptyState.className = 'bento-card';
         emptyState.style.textAlign = 'center';
-        emptyState.style.padding = '40px 20px';
+        emptyState.style.padding = '40px 24px';
         emptyState.style.color = 'var(--text-muted)';
-        emptyState.style.background = 'var(--bg-card)';
-        emptyState.style.borderRadius = 'var(--radius-lg)';
-        emptyState.style.border = '1px solid var(--border-card)';
-        emptyState.innerHTML = '<p style="font-size: 1.1rem; font-weight: 600;">No publications match your filter or search query.</p><p style="margin-top: 8px; font-size: 0.9rem;">Try clearing your search terms or selecting "All Works".</p>';
-        pubContainer.appendChild(emptyState);
+        emptyState.innerHTML = '<p style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">No publications match your filter or search query.</p><p style="margin-top: 8px; font-size: 0.9rem;">Try clearing your search terms or selecting "All Works".</p>';
+        pubContainer?.appendChild(emptyState);
       }
       emptyState.style.display = 'block';
     } else if (emptyState) {
@@ -162,7 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
     filterPublications();
   });
 
-  // --- 5. CITATION COPY TO CLIPBOARD ---
+  // ========================================================
+  // 8. CITATION COPY TO CLIPBOARD
+  // ========================================================
   document.querySelectorAll('.copy-cite-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const citation = btn.getAttribute('data-citation');
@@ -170,14 +365,15 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.clipboard.writeText(citation).then(() => {
           showToast('Citation copied to clipboard!');
         }).catch(() => {
-          // Fallback
           prompt('Copy citation:', citation);
         });
       }
     });
   });
 
-  // --- 6. BIBTEX MODAL & COPY ---
+  // ========================================================
+  // 9. BIBTEX MODAL & COPY
+  // ========================================================
   const bibtexModal = document.getElementById('bibtex-modal');
   const bibtexCodeEl = document.getElementById('bibtex-code');
   const modalCloseBtn = document.getElementById('modal-close');
@@ -229,7 +425,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 7. EMAIL COPY HELPER ---
+  // ========================================================
+  // 10. EMAIL COPY HELPER
+  // ========================================================
   const copyEmailBtn = document.getElementById('copy-email-btn');
   copyEmailBtn?.addEventListener('click', () => {
     const email = copyEmailBtn.getAttribute('data-email');
@@ -240,7 +438,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 8. TOAST NOTIFICATION UTILITY ---
+  // ========================================================
+  // 11. TOAST NOTIFICATION UTILITY
+  // ========================================================
   function showToast(message) {
     const toastContainer = document.getElementById('toast-container');
     if (!toastContainer) return;
@@ -258,15 +458,17 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       toast.classList.remove('show');
       setTimeout(() => toast.remove(), 350);
-    }, 2800);
+    }, 2600);
   }
 
-  // --- 9. ACTIVE LINK SCROLLSPY ---
+  // ========================================================
+  // 12. ACTIVE LINK SCROLLSPY
+  // ========================================================
   const sections = document.querySelectorAll('section[id]');
   const navAnchorLinks = document.querySelectorAll('.nav-link');
 
   const onScroll = () => {
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 130;
     sections.forEach((sec) => {
       const top = sec.offsetTop;
       const height = sec.offsetHeight;

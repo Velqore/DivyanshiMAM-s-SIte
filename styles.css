@@ -1,79 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Color System - Light Theme (Crisp Emerald & Slate) */
-  --bg-primary: #f6f9f8;
-  --bg-secondary: #edf3f0;
-  --bg-card: rgba(255, 255, 255, 0.88);
+  /* --- Chemistry & Sustainable Materials Color Palette (Light Theme) --- */
+  /* Pristine aquatic white/mint base representing clean, decontaminated water */
+  --bg-primary: #f5f9f8;
+  --bg-secondary: #e9f2ef;
+  --bg-card: rgba(255, 255, 255, 0.82);
   --bg-card-hover: #ffffff;
-  --surface-tint: rgba(16, 185, 129, 0.05);
+  --surface-tint: rgba(16, 185, 129, 0.06);
 
-  --text-main: #0c1e21;
-  --text-secondary: #3b5258;
-  --text-muted: #647b82;
+  --text-main: #06191c;
+  --text-secondary: #2c4a4f;
+  --text-muted: #5e7b81;
 
-  --primary: #0a3d3c;
-  --primary-rgb: 10, 61, 60;
-  --primary-light: #125957;
+  /* Chemical Bio-Polymer Emerald & Magnetic Teal */
+  --primary: #074744;
+  --primary-rgb: 7, 71, 68;
+  --primary-light: #0d635f;
   --accent-emerald: #059669;
   --accent-mint: #10b981;
-  --accent-glow: rgba(16, 185, 129, 0.25);
+  --accent-cyan: #06b6d4;
+  --accent-glow: rgba(16, 185, 129, 0.22);
+  --card-specular: rgba(16, 185, 129, 0.16);
+
+  /* Nobel Gold & German Patent Amber */
   --gold: #c28823;
-  --gold-soft: #fef7ec;
-  --gold-border: rgba(194, 136, 35, 0.28);
+  --gold-soft: #fdf8ee;
+  --gold-border: rgba(194, 136, 35, 0.32);
 
-  --border-light: rgba(10, 61, 60, 0.08);
-  --border-card: rgba(10, 61, 60, 0.12);
-  --border-highlight: rgba(16, 185, 129, 0.35);
+  --border-light: rgba(7, 71, 68, 0.08);
+  --border-card: rgba(7, 71, 68, 0.11);
+  --border-highlight: rgba(16, 185, 129, 0.42);
 
-  --shadow-sm: 0 4px 12px rgba(10, 30, 33, 0.04);
-  --shadow-md: 0 12px 30px rgba(10, 30, 33, 0.07);
-  --shadow-lg: 0 20px 48px rgba(10, 30, 33, 0.12);
-  --shadow-glow: 0 0 35px rgba(16, 185, 129, 0.22);
+  --shadow-sm: 0 4px 14px rgba(6, 25, 28, 0.04);
+  --shadow-md: 0 14px 34px rgba(6, 25, 28, 0.07);
+  --shadow-lg: 0 24px 54px rgba(6, 25, 28, 0.12);
+  --shadow-glow: 0 0 35px rgba(16, 185, 129, 0.2);
 
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-pill: 9999px;
 
-  --max-width: 1240px;
+  --max-width: 1260px;
   --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-theme="dark"] {
-  --bg-primary: #071214;
-  --bg-secondary: #0d1a1c;
-  --bg-card: rgba(15, 30, 33, 0.72);
-  --bg-card-hover: rgba(20, 38, 42, 0.95);
-  --surface-tint: rgba(16, 185, 129, 0.08);
+  /* --- Magnetic Ferrite & Bioluminescent Lab Palette (Dark Theme) --- */
+  --bg-primary: #051214;
+  --bg-secondary: #0a1b1e;
+  --bg-card: rgba(12, 30, 34, 0.72);
+  --bg-card-hover: rgba(16, 40, 45, 0.92);
+  --surface-tint: rgba(16, 185, 129, 0.09);
 
-  --text-main: #f0f7f6;
-  --text-secondary: #bad0cf;
-  --text-muted: #829a9b;
+  --text-main: #f0fdfa;
+  --text-secondary: #b6d4d2;
+  --text-muted: #749697;
 
   --primary: #14b8a6;
   --primary-rgb: 20, 184, 166;
   --primary-light: #2dd4bf;
   --accent-emerald: #10b981;
   --accent-mint: #34d399;
-  --accent-glow: rgba(52, 211, 153, 0.22);
+  --accent-cyan: #22d3ee;
+  --accent-glow: rgba(52, 211, 153, 0.26);
+  --card-specular: rgba(52, 211, 153, 0.22);
+
   --gold: #f59e0b;
   --gold-soft: rgba(245, 158, 11, 0.12);
-  --gold-border: rgba(245, 158, 11, 0.26);
+  --gold-border: rgba(245, 158, 11, 0.3);
 
-  --border-light: rgba(255, 255, 255, 0.07);
-  --border-card: rgba(52, 211, 153, 0.14);
-  --border-highlight: rgba(52, 211, 153, 0.42);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(52, 211, 153, 0.15);
+  --border-highlight: rgba(52, 211, 153, 0.5);
 
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 40px rgba(52, 211, 153, 0.22);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 16px 38px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 28px 65px rgba(0, 0, 0, 0.72);
+  --shadow-glow: 0 0 45px rgba(52, 211, 153, 0.25);
 }
 
 /* Base Resets */
@@ -98,56 +108,192 @@ body {
   position: relative;
 }
 
-/* Background Graphic Ambience */
-.bg-ambient {
+/* ========================================================
+   1. SCIENTIFIC PRELOADER ANIMATION
+   ======================================================== */
+.preloader {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  padding: 20px;
+}
+
+.atom-loader {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+}
+
+.atom-core {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-mint) 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 25px var(--accent-glow);
+  z-index: 2;
+  animation: pulse-core 2s ease-in-out infinite;
+}
+
+.electron-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--accent-mint);
+  border-bottom-color: var(--accent-cyan);
+}
+
+.ring-1 {
+  transform: rotate(0deg);
+  animation: spin-ring 1.8s linear infinite;
+}
+
+.ring-2 {
+  transform: rotate(60deg);
+  animation: spin-ring 2.2s linear infinite reverse;
+}
+
+.ring-3 {
+  transform: rotate(120deg);
+  animation: spin-ring 2.6s linear infinite;
+}
+
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-core {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--accent-glow); }
+  50% { transform: scale(1.08); box-shadow: 0 0 35px var(--accent-mint); }
+}
+
+.preloader-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-main);
+}
+
+.preloader-sub {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.preloader-bar-wrap {
+  width: 220px;
+  height: 4px;
+  background: var(--border-card);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-mint));
+  border-radius: var(--radius-pill);
+  transition: width 0.3s ease;
+}
+
+/* ========================================================
+   2. MOLECULAR 3D PARTICLE CANVAS & AMBIENT BLOBS
+   ======================================================== */
+.molecular-canvas {
+  position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
   z-index: -1;
+  opacity: 0.45;
+}
+
+[data-theme="dark"] .molecular-canvas {
+  opacity: 0.65;
+}
+
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2;
   overflow: hidden;
 }
 
 .blob-1 {
   position: absolute;
-  top: -150px;
+  top: -160px;
   right: -100px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-  filter: blur(60px);
-  opacity: 0.6;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+  filter: blur(80px);
+  opacity: 0.7;
 }
 
 .blob-2 {
   position: absolute;
-  top: 45%;
-  left: -200px;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 68%);
-  filter: blur(80px);
+  top: 40%;
+  left: -220px;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  filter: blur(90px);
 }
 
 .blob-3 {
   position: absolute;
-  bottom: -150px;
-  right: 10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--gold-soft) 0%, transparent 70%);
-  filter: blur(70px);
+  bottom: -180px;
+  right: 15%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, var(--gold-soft) 0%, transparent 72%);
+  filter: blur(80px);
 }
 
-/* Containers */
+/* ========================================================
+   3. CONTAINERS & ACCESSIBILITY
+   ======================================================== */
 .container {
   width: min(var(--max-width), calc(100% - 48px));
   margin-inline: auto;
 }
 
-/* Accessibility Skip Link */
 .skip-link {
   position: absolute;
   top: -50px;
@@ -182,21 +328,23 @@ a {
   text-decoration: none;
 }
 
-/* Header & Navbar */
+/* ========================================================
+   4. HEADER & NAVBAR
+   ======================================================== */
 .site-header {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(246, 249, 248, 0.82);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(245, 249, 248, 0.84);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
   transition: var(--transition);
 }
 
 [data-theme="dark"] .site-header {
-  background: rgba(7, 18, 20, 0.82);
+  background: rgba(5, 18, 20, 0.84);
 }
 
 .nav-container {
@@ -224,12 +372,12 @@ a {
   font-size: 1.15rem;
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 14px var(--accent-glow);
+  box-shadow: 0 4px 16px var(--accent-glow);
   transition: transform 0.25s ease;
 }
 
 .brand-link:hover .brand-monogram {
-  transform: scale(1.05) rotate(3deg);
+  transform: scale(1.06) rotate(4deg);
 }
 
 .brand-title {
@@ -245,17 +393,21 @@ a {
 }
 
 .brand-role {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--accent-emerald);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 650;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .brand-role {
+  color: var(--accent-mint);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
   list-style: none;
 }
 
@@ -298,7 +450,7 @@ a {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .theme-toggle-btn {
@@ -360,20 +512,20 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, #155554 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #0d5c58 100%);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(10, 61, 60, 0.28);
+  box-shadow: 0 4px 18px rgba(7, 71, 68, 0.3);
 }
 
 [data-theme="dark"] .btn-primary {
   background: linear-gradient(135deg, var(--accent-mint) 0%, #059669 100%);
-  color: #071214;
-  box-shadow: 0 4px 20px rgba(52, 211, 153, 0.35);
+  color: #051214;
+  box-shadow: 0 4px 22px rgba(52, 211, 153, 0.36);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(10, 61, 60, 0.35);
+  box-shadow: 0 8px 26px rgba(7, 71, 68, 0.4);
 }
 
 .btn-secondary {
@@ -395,17 +547,104 @@ a {
   border-radius: var(--radius-sm);
 }
 
-/* Hero Section */
+/* ========================================================
+   5. 3D TILT BENTO CARD ARCHITECTURE
+   ======================================================== */
+.bento-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+/* Specular glass reflection layer follows mouse */
+.bento-card-glass {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: radial-gradient(circle 420px at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-specular), transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bento-card-inner {
+  position: relative;
+  z-index: 2;
+  padding: 34px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+}
+
+.bento-card:hover {
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* Child 3D popping depth layers */
+[data-depth] {
+  transform: translateZ(0px);
+  transition: transform 0.22s ease-out;
+}
+
+.bento-card:hover [data-depth="10"] { transform: translateZ(10px); }
+.bento-card:hover [data-depth="15"] { transform: translateZ(16px); }
+.bento-card:hover [data-depth="20"] { transform: translateZ(24px); }
+.bento-card:hover [data-depth="25"] { transform: translateZ(32px); }
+.bento-card:hover [data-depth="30"] { transform: translateZ(40px); }
+
+/* Badges */
+.bento-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+.bento-badge.gold-badge {
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-border);
+  color: var(--gold);
+}
+
+.bento-badge.emerald-badge {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  color: var(--accent-mint);
+}
+
+/* ========================================================
+   6. FLAGSHIP BENTO-HERO GRID LAYOUT
+   ======================================================== */
 .hero-section {
-  padding: 60px 0 70px;
+  padding: 48px 0 64px;
   position: relative;
 }
 
-.hero-grid {
+.bento-hero-grid {
   display: grid;
-  grid-template-columns: 1.18fr 0.82fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+}
+
+/* Tile 1: Main Introduction (span 7 cols) */
+.bento-hero-intro {
+  grid-column: span 7;
+  grid-row: span 2;
 }
 
 .hero-pill-badge {
@@ -417,19 +656,26 @@ a {
   background: var(--gold-soft);
   border: 1px solid var(--gold-border);
   color: var(--gold);
-  font-size: 0.84rem;
-  font-weight: 750;
-  letter-spacing: 0.03em;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(194, 136, 35, 0.08);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px var(--gold);
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
-  line-height: 1.05;
-  margin-bottom: 16px;
+  font-size: clamp(2.8rem, 5.2vw, 4.2rem);
+  line-height: 1.04;
+  margin-bottom: 14px;
   letter-spacing: -0.04em;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .hero-title .name-highlight {
@@ -445,13 +691,13 @@ a {
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.18rem;
+  font-weight: 650;
   color: var(--primary);
   margin-bottom: 18px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 [data-theme="dark"] .hero-subtitle {
@@ -459,11 +705,10 @@ a {
 }
 
 .hero-bio {
-  font-size: 1.08rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.72;
   color: var(--text-secondary);
   margin-bottom: 30px;
-  max-width: 620px;
 }
 
 .hero-bio strong {
@@ -473,31 +718,276 @@ a {
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 34px;
+  margin-top: auto;
 }
 
-.profile-pills {
+/* Tile 2: 3D Portrait Tile (span 5 cols) */
+.bento-hero-portrait {
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+.portrait-card-inner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portrait-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.7;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #e2ebe8;
+  box-shadow: var(--shadow-md);
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.bento-hero-portrait:hover .portrait-img {
+  transform: scale(1.03);
+}
+
+.portrait-glow-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 30, 34, 0.6) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.portrait-bento-caption {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: var(--surface-tint);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.caption-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.caption-inst {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.caption-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.active-pulse-indicator {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.pulse-center {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #10b981;
+  opacity: 0.6;
+  animation: pulse-ring 2s infinite ease-out;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Tile 3: Ph.D. Dissertation Spotlight (span 4 cols) */
+.bento-phd-card {
+  grid-column: span 4;
+}
+
+.bento-card-heading {
+  font-size: 1.15rem;
+  font-weight: 750;
+  line-height: 1.4;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.bento-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.thesis-chem-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.chem-tag {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-tint);
+  border: 1px solid var(--border-light);
+  color: var(--accent-mint);
+  font-weight: 600;
+}
+
+/* Tile 4: German Patent Spotlight (span 4 cols) */
+.bento-patent-card {
+  grid-column: span 4;
+  background: linear-gradient(135deg, rgba(7, 35, 38, 0.9) 0%, rgba(10, 48, 52, 0.96) 100%);
+  color: #ffffff;
+  border-color: rgba(52, 211, 153, 0.28);
+}
+
+.bento-patent-card h3,
+.bento-patent-card p {
+  color: #e0f2fe;
+}
+
+.patent-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.patent-cert-num {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-mint);
+  font-weight: 700;
+}
+
+.bento-patent-title {
+  font-size: 1.12rem;
+  line-height: 1.38;
+  color: #ffffff !important;
+  margin-bottom: 10px;
+}
+
+.bento-patent-text {
+  font-size: 0.86rem;
+  color: #a7cbcc !important;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.patent-bottom-meta {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: #83b6b8;
+  display: flex;
+  gap: 8px;
+}
+
+.patent-bottom-meta strong {
+  color: #ffffff;
+}
+
+/* Tile 5: Research Metrics & Profiles Bento (span 4 cols) */
+.bento-metrics-card {
+  grid-column: span 4;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.metric-cell {
+  background: var(--surface-tint);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-value-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.95rem;
+  font-weight: 850;
+  color: var(--primary);
+  line-height: 1;
+}
+
+[data-theme="dark"] .stat-number {
+  color: var(--accent-mint);
+}
+
+.stat-plus {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.metric-title {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.bento-profiles-bar {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .profile-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 14px;
+  gap: 6px;
+  padding: 7px 12px;
   border-radius: var(--radius-pill);
-  background: var(--bg-card);
+  background: var(--bg-primary);
   border: 1px solid var(--border-card);
   color: var(--text-secondary);
-  font-size: 0.84rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 650;
   transition: var(--transition);
-  text-decoration: none;
 }
 
 .profile-pill:hover {
@@ -508,191 +998,16 @@ a {
 }
 
 .profile-pill svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   fill: currentColor;
 }
 
-/* Portrait Card in Hero */
-.portrait-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.portrait-glow-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 105%;
-  height: 105%;
-  background: linear-gradient(135deg, var(--accent-mint) 0%, var(--gold) 100%);
-  filter: blur(28px);
-  opacity: 0.28;
-  border-radius: var(--radius-xl);
-  z-index: 0;
-}
-
-.portrait-frame {
-  position: relative;
-  z-index: 1;
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  padding: 14px;
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(14px);
-  width: 100%;
-  max-width: 400px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.portrait-frame:hover {
-  transform: translateY(-4px);
-}
-
-.portrait-img-wrapper {
-  position: relative;
-  border-radius: calc(var(--radius-xl) - 8px);
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  background: #e4ebe9;
-}
-
-.portrait-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
-}
-
-.portrait-status-badge {
-  position: absolute;
-  bottom: 14px;
-  left: 14px;
-  right: 14px;
-  background: rgba(10, 30, 33, 0.88);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.status-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.status-institution {
-  font-weight: 750;
-  font-size: 0.88rem;
-  letter-spacing: -0.01em;
-}
-
-.status-dept {
-  font-size: 0.74rem;
-  color: #a7d0c7;
-}
-
-.status-pulse {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #34d399;
-  background: rgba(52, 211, 153, 0.15);
-  padding: 4px 9px;
-  border-radius: var(--radius-pill);
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 8px #34d399;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.25); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
-}
-
-/* Stats Counter Strip */
-.stats-strip {
-  margin-top: 50px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 28px 36px;
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(16px);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid var(--border-light);
-  padding-right: 16px;
-}
-
-.stat-item:last-child {
-  border-right: none;
-  padding-right: 0;
-}
-
-.stat-num-wrapper {
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
-
-.stat-number {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--primary);
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-[data-theme="dark"] .stat-number {
-  color: var(--accent-mint);
-}
-
-.stat-suffix {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--gold);
-}
-
-.stat-label {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-top: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-/* Generic Section Styles */
+/* ========================================================
+   7. ABOUT SECTION BENTO
+   ======================================================== */
 .section {
-  padding: 90px 0;
+  padding: 85px 0;
   position: relative;
 }
 
@@ -701,12 +1016,12 @@ a {
 }
 
 .section-header {
-  margin-bottom: 54px;
+  margin-bottom: 48px;
 }
 
 .section-header.center {
   text-align: center;
-  max-width: 720px;
+  max-width: 760px;
   margin-inline: auto;
 }
 
@@ -715,11 +1030,11 @@ a {
   align-items: center;
   gap: 7px;
   color: var(--gold);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .section-kicker::before {
@@ -732,10 +1047,10 @@ a {
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
   letter-spacing: -0.035em;
-  line-height: 1.1;
-  margin-bottom: 14px;
+  line-height: 1.12;
+  margin-bottom: 12px;
 }
 
 .section-desc {
@@ -744,72 +1059,34 @@ a {
   line-height: 1.7;
 }
 
-/* About Section */
-.about-grid {
+.bento-about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
+  gap: 24px;
 }
 
-.about-prose p {
-  font-size: 1.05rem;
+.bento-section-title {
+  font-size: 1.35rem;
   margin-bottom: 18px;
+  color: var(--text-main);
+}
+
+.about-lead-p {
+  font-size: 1.08rem;
+  margin-bottom: 16px;
   line-height: 1.75;
 }
 
-.about-thesis-card {
-  margin-top: 28px;
-  background: var(--bg-card);
-  border-left: 4px solid var(--accent-mint);
-  border-top: 1px solid var(--border-card);
-  border-right: 1px solid var(--border-card);
-  border-bottom: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
-  padding: 22px 24px;
-  box-shadow: var(--shadow-sm);
-}
-
-.thesis-badge {
-  display: inline-block;
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--accent-emerald);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-[data-theme="dark"] .thesis-badge {
-  color: var(--accent-mint);
-}
-
-.thesis-title {
-  font-size: 1.02rem;
-  font-weight: 700;
-  font-style: italic;
-  color: var(--text-main);
-  margin-bottom: 8px;
-}
-
-.thesis-meta {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.bento-bio-card p {
+  margin-bottom: 16px;
+  line-height: 1.72;
 }
 
 /* Timeline */
-.timeline-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: var(--shadow-md);
-}
-
 .timeline-list {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 22px;
   position: relative;
   padding-left: 28px;
 }
@@ -847,7 +1124,7 @@ a {
 
 .timeline-year {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--gold);
   letter-spacing: 0.04em;
@@ -855,57 +1132,24 @@ a {
 }
 
 .timeline-title {
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   font-weight: 750;
   color: var(--text-main);
   margin-bottom: 3px;
 }
 
 .timeline-sub {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--text-secondary);
 }
 
-/* Research Areas */
-.research-grid {
+/* ========================================================
+   8. RESEARCH BENTO GRID
+   ======================================================== */
+.bento-research-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.research-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 30px;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-}
-
-.research-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-mint), var(--primary));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.research-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-highlight);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-}
-
-.research-card:hover::before {
-  opacity: 1;
+  gap: 22px;
 }
 
 .research-icon-wrapper {
@@ -914,20 +1158,19 @@ a {
   border-radius: var(--radius-md);
   background: var(--surface-tint);
   border: 1px solid var(--border-card);
-  color: var(--accent-mint);
   display: grid;
   place-items: center;
-  font-size: 1.4rem;
-  margin-bottom: 20px;
+  font-size: 1.45rem;
+  margin-bottom: 18px;
 }
 
-.research-card h3 {
+.bento-research-tile h3 {
   font-size: 1.25rem;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.research-card p {
-  font-size: 0.94rem;
+.bento-research-tile p {
+  font-size: 0.92rem;
   line-height: 1.65;
   color: var(--text-secondary);
   flex-grow: 1;
@@ -936,12 +1179,12 @@ a {
 .research-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
   margin-top: 18px;
 }
 
 .research-tag {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-family: var(--font-mono);
   padding: 4px 10px;
   border-radius: var(--radius-pill);
@@ -950,115 +1193,16 @@ a {
   font-weight: 600;
 }
 
-/* Patent Showcase Banner */
-.patent-banner {
-  margin-top: 48px;
-  background: linear-gradient(135deg, #09262b 0%, #0d383e 100%);
-  color: #ffffff;
-  border-radius: var(--radius-xl);
-  padding: 42px 46px;
-  border: 1px solid rgba(52, 211, 153, 0.28);
-  box-shadow: 0 16px 40px rgba(9, 38, 43, 0.35);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 36px;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.patent-banner::after {
-  content: 'PATENT';
-  position: absolute;
-  right: -20px;
-  bottom: -30px;
-  font-family: var(--font-heading);
-  font-size: 8rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.03);
-  pointer-events: none;
-  letter-spacing: 0.05em;
-}
-
-.patent-badge-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(245, 158, 11, 0.18);
-  border: 1px solid rgba(245, 158, 11, 0.45);
-  color: #fbbf24;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.patent-title {
-  font-size: 1.45rem;
-  color: #ffffff;
-  margin-bottom: 12px;
-  line-height: 1.35;
-}
-
-.patent-desc {
-  color: #bad3d3;
-  font-size: 0.96rem;
-  margin-bottom: 16px;
-  max-width: 820px;
-}
-
-.patent-meta {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 0.85rem;
-  color: #a4c5c4;
-}
-
-.patent-meta strong {
-  color: #ffffff;
-}
-
-.patent-seal {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px dashed rgba(52, 211, 153, 0.4);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  text-align: center;
-  min-width: 180px;
-}
-
-.seal-icon {
-  font-size: 2.2rem;
-  margin-bottom: 6px;
-}
-
-.seal-country {
-  font-weight: 800;
-  font-size: 0.84rem;
-  color: #ffffff;
-  letter-spacing: 0.05em;
-}
-
-.seal-number {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--accent-mint);
-  margin-top: 4px;
-}
-
-/* Publications Section */
+/* ========================================================
+   9. PUBLICATIONS SECTION
+   ======================================================== */
 .pub-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 18px;
-  margin-bottom: 30px;
+  gap: 16px;
+  margin-bottom: 26px;
 }
 
 .pub-filter-tabs {
@@ -1093,18 +1237,18 @@ a {
 
 [data-theme="dark"] .filter-btn.active {
   background: var(--accent-mint);
-  color: #071214;
+  color: #051214;
   border-color: var(--accent-mint);
 }
 
 .pub-search-box {
   position: relative;
-  min-width: 280px;
+  min-width: 290px;
 }
 
 .pub-search-input {
   width: 100%;
-  padding: 9px 14px 9px 38px;
+  padding: 10px 14px 10px 38px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-card);
   background: var(--bg-card);
@@ -1137,28 +1281,23 @@ a {
 }
 
 .pub-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
+  padding: 0;
+}
+
+.pub-card-layout {
+  position: relative;
+  z-index: 2;
   padding: 26px 30px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
   display: grid;
   grid-template-columns: 80px 1fr auto;
   gap: 26px;
   align-items: start;
 }
 
-.pub-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-highlight);
-  box-shadow: var(--shadow-md);
-}
-
 .pub-year-badge {
   font-family: var(--font-heading);
   font-size: 1.35rem;
-  font-weight: 800;
+  font-weight: 850;
   color: var(--primary);
   text-align: center;
   padding: 8px 12px;
@@ -1301,33 +1440,21 @@ a {
 
 [data-theme="dark"] .pub-action-btn.doi {
   background: var(--accent-mint);
-  color: #071214;
+  color: #051214;
   border-color: var(--accent-mint);
 }
 
-/* Teaching Section */
-.courses-grid {
+/* ========================================================
+   10. TEACHING, LEADERSHIP & HONORS BENTO
+   ======================================================== */
+.bento-courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 18px;
 }
 
-.course-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
+.course-card .bento-card-inner {
   padding: 22px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.course-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-highlight);
-  box-shadow: var(--shadow-md);
 }
 
 .course-code {
@@ -1354,20 +1481,11 @@ a {
   color: var(--text-muted);
 }
 
-/* Leadership & Service */
-.leadership-grid {
+.bento-leadership-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 22px;
   margin-top: 36px;
-}
-
-.leadership-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
 }
 
 .leadership-role {
@@ -1378,42 +1496,26 @@ a {
 }
 
 .leadership-org {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--accent-mint);
   font-weight: 650;
   margin-bottom: 12px;
 }
 
 .leadership-desc {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
 }
 
-/* Achievements & Awards */
-.achievements-grid {
+/* Achievements Bento */
+.bento-achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.achievement-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 26px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  position: relative;
-}
-
-.achievement-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--gold-border);
-}
-
 .achievement-icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 12px;
 }
 
@@ -1427,7 +1529,8 @@ a {
 .achievement-detail {
   font-size: 0.88rem;
   color: var(--text-secondary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  flex-grow: 1;
 }
 
 .achievement-year {
@@ -1437,27 +1540,20 @@ a {
   font-weight: 700;
 }
 
-/* Contact Section */
-.contact-grid {
+/* ========================================================
+   11. CONTACT BENTO
+   ======================================================== */
+.bento-contact-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.contact-card-box {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  padding: 38px;
-  box-shadow: var(--shadow-lg);
+  gap: 24px;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border-light);
 }
 
@@ -1484,7 +1580,7 @@ a {
 }
 
 .contact-label {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1580,7 +1676,7 @@ a {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(7, 18, 20, 0.7);
+  background: rgba(5, 18, 20, 0.75);
   backdrop-filter: blur(8px);
   z-index: 10000;
   display: grid;
@@ -1675,10 +1771,10 @@ a {
 }
 
 .toast {
-  background: #09262b;
+  background: #072528;
   color: #ffffff;
-  border: 1px solid rgba(52, 211, 153, 0.4);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
   border-radius: var(--radius-md);
   padding: 12px 20px;
   font-size: 0.88rem;
@@ -1697,38 +1793,33 @@ a {
   opacity: 1;
 }
 
-/* Responsive Media Queries */
+/* ========================================================
+   12. RESPONSIVE BREAKPOINTS
+   ======================================================== */
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
+  .bento-hero-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .portrait-container {
+  .bento-hero-intro,
+  .bento-hero-portrait,
+  .bento-phd-card,
+  .bento-patent-card,
+  .bento-metrics-card {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+  .bento-hero-portrait {
     order: -1;
   }
-  .portrait-frame {
-    max-width: 320px;
+  .bento-about-grid,
+  .bento-contact-grid {
+    grid-template-columns: 1fr;
   }
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 24px;
-  }
-  .stat-item:nth-child(3) {
-    border-right: none;
-  }
-  .research-grid,
-  .achievements-grid {
+  .bento-research-grid,
+  .bento-achievements-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .patent-banner {
-    grid-template-columns: 1fr;
-  }
-  .pub-card {
+  .pub-card-layout {
     grid-template-columns: 70px 1fr;
   }
   .pub-actions {
@@ -1762,15 +1853,9 @@ a {
   .brand-role {
     display: none;
   }
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .stat-item:nth-child(2n) {
-    border-right: none;
-  }
-  .research-grid,
-  .achievements-grid,
-  .leadership-grid {
+  .bento-research-grid,
+  .bento-achievements-grid,
+  .bento-leadership-grid {
     grid-template-columns: 1fr;
   }
   .pub-controls {
@@ -1780,12 +1865,9 @@ a {
   .pub-search-box {
     width: 100%;
   }
-  .pub-card {
+  .pub-card-layout {
     grid-template-columns: 1fr;
     gap: 14px;
-  }
-  .pub-year-badge {
-    align-self: flex-start;
   }
   .pub-actions {
     grid-column: 1 / -1;
@@ -1796,5 +1878,8 @@ a {
   }
   .hero-actions .btn {
     width: 100%;
+  }
+  .bento-card-inner {
+    padding: 24px;
   }
 }
